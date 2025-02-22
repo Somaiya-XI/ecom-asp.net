@@ -1,0 +1,246 @@
+﻿@inject SignInManager<ApplicationUser> signInManager
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- SNEAT STYLES-->
+    <!-- Favicon -->
+    @* <link rel="icon" type="image/x-icon" href="~/sneat/assets/img/favicon/favicon.ico" /> *@
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+
+    <title>Multikart - Multi-purpopse E-commerce Html Template</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/fontawesome.css">
+
+    <!--Slick slider css-->
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/slick-theme.css">
+
+    <!-- Animate icon -->
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/animate.css">
+
+    <!-- Themify icon -->
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/themify-icons.css">
+
+    <!-- Bootstrap css -->
+
+    <!-- Theme css -->
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/color19.css" media="screen" id="color">
+
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="~/Fontend/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="~/css/output.css">
+
+    @RenderSection("Styles", required: false)
+</head>
+
+<body class="font-[Parkinsans] bg-base">
+    <div class="min-h-screen">
+        <header class="pt-5 flex flex-col items-center justify-center mb-5">
+            <nav class="container flex flex-col ">
+                <div class="container bg-neutral-900 flex justify-between items-center py-1 px-4 m-auto rounded-2xl ">
+                    <div class="hidden md:block">
+                        <ul class="flex gap-x-4 justif-center items-center my-0 text-white select-none">
+                            <li class="hover:scale-97 hover:text-gray-200 transition duration-150 ease-in-out">
+                                <a href="/Home">Home</a>
+                            </li>
+                            <li class="hover:scale-97 hover:text-gray-200 transition duration-150 ease-in-out">
+                                <a href="/Home">Shop</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex gap-x-4 justif-center items-center my-0 ">
+                        <a class="cursor-pointer hover:scale-97  transition duration-150 ease-in-out" href="/">
+                            <svg class="w-16" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 662.3 294.7">
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: #fff;
+                                        }
+                                    </style>
+                                </defs>
+                                <g id="Layer_1-2" data-name="Layer 1">
+                                    <path class="cls-1"
+                                        d="m263.3,270c20.6-10.1,37.4-26,50.3-47.6,13-21.7,26.3-49.8,40.1-84.5,8.7-20.9,18-40.6,28.1-59,10.1-18.4,24.5-33.2,43.3-44.4,18.8-11.2,44.8-16.8,78-16.8s74.2,9,101.2,27.1c27.1,18,40.6,49.4,40.6,94.2s-10.8,69.3-32.5,91c-21.7,21.7-52,32.5-91,32.5h-30.3c-4.8,0-8.7,3.9-8.7,8.7h0c0,4.8,3.9,8.7,8.7,8.7h34.6c43.3,0,76.9-12.6,100.7-37.9,23.8-25.3,35.7-59.6,35.7-102.9s-14.4-85.4-43.3-106.7c-5.8-4.3-12-8.1-18.6-11.6s-1.1-3.4.8-3.4h30c4.8,0,8.7-3.9,8.7-8.7h0c0-4.8-3.9-8.7-8.7-8.7H129C57.8,0,0,57.8,0,129v157c0,4.8,3.9,8.7,8.7,8.7h0c4.8,0,8.7-3.9,8.7-8.7v-75.9c0-3.5,4.7-4.5,6.2-1.4s.7,1.5,1,2.2c10.8,22.7,28.5,40.8,53.1,54.1,24.5,13.4,57.4,20,98.5,20s66.6-5.1,87.2-15.2Zm-204.7-40.1c-20-22.9-30.9-51.2-32.7-84.9h143.8c4,0,7.3-3.3,7.3-7.3v-2.5c0-4-3.3-7.3-7.3-7.3H25.8c.9-20.4,5.9-38.7,15-55,10.1-18.1,27.4-32.3,52-42.8,5.5-2.3,11.4-4.4,17.8-6.2,15.9-4.5,32.5-6.6,49-6.6h260c-19.1,10.4-34.8,24.7-46.9,43.1-12.6,19.1-24,41.7-34.1,67.7-9.4,25.3-19.5,48.5-30.3,69.8-10.8,21.3-26.2,38.3-46,50.9-19.9,12.6-48.6,18.9-86.1,18.9-56.3,0-95.5-12.6-117.5-37.9Z" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div>
+                        <div class="flex gap-x-4 justif-center items-center my-0">
+                            <a asp-controller="Order" asp-action="Cart"
+                                class="justify-center items-center gap-2.5 bg-white p-1 pl-2.5 rounded-2xl font-semibold hidden sm:flex">
+                                Cart
+                                <div class="bg-primary rounded-xl py-1.5 px-2.5 flex items-center">
+                                    <iconify-icon icon="hugeicons:shopping-cart-add-01" width="22"
+                                        height="22"></iconify-icon>
+                                </div>
+                            </a>
+                            <a id="account-menu" class="bg-primary rounded-2xl py-2.5 px-3.5 flex items-center">
+                                <iconify-icon icon="hugeicons:user" width="22" height="22"></iconify-icon> </a>
+                            <a id="nav-menu" class="md:hidden flex items-center text-white">
+                                <iconify-icon icon="hugeicons:menu-01" width="24" height="24"></iconify-icon> </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative container flex justify-end items-center">
+                    <div id="account-dropdown-menu"
+                        class="absolute top-0 right-14 md:right-0 bg-neutral-900 sm:w-1/5 lg:w-1/8 py-4 pl-4 pr-6 mt-1 rounded-xl invisible opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 hover:visible hover:z-100">
+                        <ul class="flex flex-col gap-2.5 m-0 text-white">
+                            @if (!signInManager.IsSignedIn(User))
+                            {
+                                <li><a asp-controller="Users" asp-action="Register">Register</a></li>
+                                <li><a asp-controller="Users" asp-action="Login">Login</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="Order" asp-action="MyOrders">Orders</a></li>
+                                <li><a asp-controller="Users" asp-action="LoginOut">Logout</a></li>
+                            }
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative container flex justify-end items-center">
+                    <div id="nav-dropdown-menu"
+                        class="absolute top-0 mt-1 bg-neutral-900 sm:w-1/5 lg:w-1/8 py-4 pl-4 pr-6 rounded-xl invisible opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 hover:visible z-100">
+                        <ul id="nav-dropdown-content" class="flex flex-col gap-2.5 m-0 text-white">
+                            <li><a href="/Home" class="hover:scale-100 transition duration-150 ease-in-out">Home</a>
+                            </li>
+                            <li><a href="./items/itemlist"
+                                    class="hover:scale-100 transition duration-150 ease-in-out">Shop</a>
+                            </li>
+                            <li class="inline sm:hidden"><a href="./items/itemlist"
+                                    class="hover:scale-100 transition duration-150 ease-in-out">Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container mx-auto">
+            @RenderBody()
+        </main>
+    </div>
+    <!-- footer -->
+    <footer class="container mx-auto relative mt-20 bg-neutral-900 px-4 pt-20 rounded-t-2xl">
+        <div class="absolute -top-6 left-1/2 h-16 w-30 -translate-x-1/2 rounded-xl p-2">
+            <img class="h-full object-contain" src="~/PRIMARY.svg" alt="" />
+        </div>
+        <nav aria-label="Footer Navigation"
+            class="mx-auto mb-10 flex max-w-lg flex-col justify-center items-center gap-10 text-center sm:flex-row sm:text-left">
+            <a href="#" class="font-medium text-white">Support</a>
+            <a href="#" class="font-medium text-white">Privacy Policy</a>
+            <a href="#" class="font-medium text-white">Terms & Conditions</a>
+        </nav>
+        <p class="py-10 text-center text-gray-300">© 2022 Boleno | All Rights Reserved</p>
+    </footer>
+
+    <!-- footer end -->
+    <!-- tap to top -->
+    <div class="tap-top top-cls">
+        <div class="h-full flex items-center justify-center">
+            <iconify-icon icon="hugeicons:arrow-up-double"></iconify-icon>
+        </div>
+    </div>
+    </div>
+    <!-- tap to top end -->
+
+
+
+    <!-- SNAET Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="~/sneat/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/sneat/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/sneat/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/sneat/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/sneat/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+
+    <!-- Main JS -->
+    <script src="~/sneat/assets/js/main.js"></script>
+
+    <!-- SNEAT Page JS -->
+
+
+    <!-- tap to top -->
+    <div class="tap-top top-cls">
+        <div class="h-full flex items-center justify-center">
+            <iconify-icon icon="hugeicons:arrow-up-double"></iconify-icon>
+        </div>
+    </div>
+    <!-- tap to top end -->
+    <!-- latest jquery-->
+    <script src="~/Fontend/js/jquery-3.3.1.min.js"></script>
+
+    <!-- fly cart ui jquery-->
+    <script src="~/Fontend/js/jquery-ui.min.js"></script>
+
+    <!-- exitintent jquery-->
+    <script src="~/Fontend/js/jquery.exitintent.js"></script>
+    <script src="~/Fontend/js/exit.js"></script>
+
+    <!-- popper js-->
+    <script src="~/Fontend/js/popper.min.js"></script>
+
+    <!-- slick js-->
+    <script src="~/Fontend/js/slick.js"></script>
+
+    <!-- menu js-->
+    <script src="~/Fontend/js/menu.js"></script>
+
+    <!-- lazyload js-->
+    <script src="~/Fontend/js/lazysizes.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="~/Fontend/js/bootstrap.js"></script>
+
+    <!-- Bootstrap Notification js-->
+    <script src="~/Fontend/js/bootstrap-notify.min.js"></script>
+
+    <!-- Fly cart js-->
+    <script src="~/Fontend/js/fly-cart.js"></script>
+
+    <!-- Theme js-->
+    <script src="~/Fontend/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.3.0/dist/iconify-icon.min.js"></script>
+
+    <script src="~/modules/helper.js"></script>
+    <script src="~/modules/settings.js"></script>
+    <script src="~/js/menu.js"></script>
+    <script>
+        feather.replace();
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+
+</html>

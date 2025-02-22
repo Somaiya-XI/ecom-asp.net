@@ -1,0 +1,27 @@
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var path = HttpContextAccessor.HttpContext?.Request.Path.Value;
+    var segments = path?.Trim('/').Split('/') ?? Array.Empty<string>();
+}
+
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb select-none">
+        <li class="breadcrumb-item"><a href="/" class="flex items-center"><iconify-icon icon="hugeicons:home-05" width="22"
+                    height="22"></iconify-icon></a></li>
+
+        @for (int i = 0; i < segments.Length; i++)
+        {
+            var url = "/" + string.Join("/", segments.Take(i + 1));
+
+            if (i == segments.Length - 1)
+            {
+                <li class="breadcrumb-item active " aria-current="page">@segments[i]</li>
+            }
+            else
+            {
+                <li class="breadcrumb-item"><a href="@url">@segments[i]</a></li>
+            }
+        }
+    </ol>
+</nav>

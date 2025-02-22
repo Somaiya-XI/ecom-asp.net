@@ -1,0 +1,18 @@
+.paginationjs {
+  display: flex;
+  border: 0;
+
+  justify-content: center;
+  padding: 10px;
+}
+.paginationjs-page {
+  padding: 8px 12px;
+  margin: 5px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.paginationjs a.active {
+  background: #0056b3;
+}

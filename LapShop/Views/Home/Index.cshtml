@@ -1,0 +1,137 @@
+﻿@model VmHomePage
+
+<!-- header end -->
+<!-- Home slider -->
+
+<section class="flex flex-col items-center justify-center ">
+
+    <div class="w-full bg-white flex flex-col lg:flex-row rounded-t-2xl p-4 gap-6">
+
+        <div
+            class="w-full h-[18.813rem] lg:w-6/10 lg:h-[39.5rem] relative rounded-3xl bg-[url(/headphones.jpg)] bg-center bg-cover">
+            <div
+                class="hidden sm:flex absolute bg-white w-30 h-33 lg:w-40 lg:h-[12rem] bottom-0 right-0 rounded-tl-2xl
+before:content-[''] before:absolute before:bg-transparent before:w-5 before:h-5 before:rounded-br-3xl before:bottom-0 before:-left-5 before:shadow-[0.4rem_0.4rem_0_0.4rem_white]
+after:content-[''] after:absolute after:bg-transparent after:w-5 after:h-5 after:rounded-br-3xl after:-top-5 after:right-0 after:shadow-[0.4rem_0.4rem_0_0.4rem_white]">
+            </div>
+            <div
+                class="hidden sm:flex absolute bg-zinc-200 w-28 h-30 lg:w-38 lg:h-[11.5rem] bottom-0 right-0 rounded-2xl">
+                New</div>
+
+
+        </div>
+
+        <div class="flex flex-col gap-6 w-full lg:w-4/10">
+
+            <div class="w-full h-[18.813rem] rounded-3xl bg-[url(/laptop.jpg)] bg-center bg-cover"></div>
+
+            <div class="w-full h-[18.813rem] rounded-3xl bg-[url(/headphones.jpg)] bg-center bg-cover"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="w-full bg-white m-auto flex flex-col items-center justify-center pt-16">
+    <h3 class="font-semibold tracking-[.2em] text-2xl">TOP CATEGORIES</h3>
+    <div class="w-full h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 px-4">
+        @foreach (var category in Model.lstCategories)
+        {
+            <div class="h-80 md:h-60 lg:h-40">
+                <div class="flex flex-col relative rounded-xl size-full">
+                    <div class="flex justify-end items-end p-6 bg-center bg-cover rounded-2xl text-white size-full"
+                        style="background-image: url('/@category.ImageName')">
+                        <h4 class="font-light text-xl ">@category.CategoryName</h4>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="flex flex-col justify-center items-center text-center gap-1.5 pt-16">
+        <h3 class="relative font-semibold tracking-[.2em] text-2xl ">Hot Deal</h3>
+        <p
+            class="relative  text-lg after:content-[''] after:absolute after:h-1 after:w-18 after:bg-red-300 after:-bottom-2 after:right-9  ">
+            Today's Special</p>
+    </div>
+    <div class="flex justify-center pt-6">
+        <p class="text-center text-green-400">Your perfect deal is just a click away! Grab it before it's gone.</p>
+    </div>
+
+</section>
+
+<!-- Product section -->
+<section class="bg-white w-full m-auto flex justify-between pt-8 px-4">
+    <div class="w-full">
+        <div class="row game-product grid-products">
+            @foreach (var item in Model.lstAllItems)
+            {
+                <div class="product-box col-xl-2 col-lg-3 col-sm-4 col-6">
+                    <partial name="ItemBox" model="@item" />
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- Product section end -->
+
+<!-- product section start -->
+<section class="bg-white w-full m-auto pt-16 tools_product bg-title pb-40 rounded-b-2xl ">
+    <div class="flex justify-center">
+        <div class="col-12">
+            <div class="theme-tab">
+                <div class="bg-title-part flex bg-primary">
+                    <h5 class="text-black font-bold">RECOMMENDATIONS FOR YOU</h5>
+                    <ul class="tabs tab-title flex">
+                        <li class="current">
+                            <a href="tab-1">New</a>
+                        </li>
+                        <li class="">
+                            <a href="tab-2">Featured</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content-cls ratio_asos px-6">
+                    <div id="tab-1" class="tab-content active default">
+                        <div class="brand-6 game-product product-m  ">
+                            @foreach (var item in Model.lstRecommendedItems)
+                            {
+                                <div class="product-box ">
+                                    <partial name="ItemBox" model="@item" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div id="tab-2" class="tab-content">
+                        <div class="brand-6 game-product product-m">
+                            @foreach (var item in Model.lstNewItems)
+                            {
+                                <div class="product-box">
+                                    <partial name="ItemBox" model="@item" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- product section end -->
+<script>
+    document.querySelectorAll(".img-card").forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            let child = card.querySelector('.card-cta'); // Get only the child inside this card
+            child.classList.remove("translate-y-7")
+        });
+        card.addEventListener('mouseleave', function () {
+            let child = card.querySelector('.card-cta'); // Get only the child inside this card
+            child.classList.add("translate-y-7")
+        });
+    });
+
+</script>

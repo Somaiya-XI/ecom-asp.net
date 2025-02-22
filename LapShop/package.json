@@ -1,0 +1,17 @@
+{
+  "name": "lapshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx @tailwindcss/cli -i ./wwwroot/css/input.css -o ./wwwroot/css/output.css --watch --minify",
+    "dev": "concurrently \"dotnet watch run\" \"npm run tailwind\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.5",
+    "tailwindcss": "^4.0.5"
+  }
+}

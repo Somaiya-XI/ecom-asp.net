@@ -1,0 +1,81 @@
+﻿@model UserModel
+
+<div class="w-full bg-white flex flex-col rounded-2xl p-4 gap-6 min-h-screen ">
+
+    <partial name="_Breadcrumb" />
+    <section class="w-full min-h-full pt-12 flex flex-col justify-center items-center gap-6">
+        <div class="text-center space-y-1.5">
+            <h3 class="text-2xl font-semibold">Welcome Back!</h3>
+            <p class="text-xs">Enter your details to login</p>
+        </div>
+        <form method="post" asp-controller="Users" asp-action="Login" class="w-full mx-auto space-y-6 max-w-xl">
+            <div class="w-full max-w-xl">
+                <label for="email" class="block mb-2 text-md font-medium text-gray-900 ">
+                    Email
+                </label>
+                <div class="relative text-center ">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <svg class="w-5 h-5 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M2 12c0-3.771 0-5.657 1.172-6.828S6.229 4 10 4h4c3.771 0 5.657 0 6.828 1.172S22 8.229 22 12s0 5.657-1.172 6.828S17.771 20 14 20h-4c-3.771 0-5.657 0-6.828-1.172S2 15.771 2 12Z" />
+                                <path stroke-linecap="round"
+                                    d="m6 8l2.159 1.8c1.837 1.53 2.755 2.295 3.841 2.295s2.005-.765 3.841-2.296L18 8" />
+                            </g>
+                        </svg>
+                    </div>
+                    <input asp-for="ReturnUrl" type="hidden" />
+
+                    <input asp-for="Email" type="text" id="email"
+                        class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
+                        placeholder="Your@mail.com" required="" />
+                </div>
+            </div>
+            <div class="w-full max-w-xl">
+                <label for="password" class="block mb-2 text-md font-medium text-gray-900 ">
+                    Password
+                </label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none ">
+                        <svg class="w-5 h-5 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 256 256">
+                            <path fill="currentColor"
+                                d="M48 56v144a8 8 0 0 1-16 0V56a8 8 0 0 1 16 0m92 54.5l-20 6.5V96a8 8 0 0 0-16 0v21l-20-6.5a8 8 0 0 0-5 15.22l20 6.49l-12.34 17a8 8 0 1 0 12.94 9.4l12.34-17l12.34 17a8 8 0 1 0 12.94-9.4l-12.34-17l20-6.49A8 8 0 0 0 140 110.5m106 5.14a8 8 0 0 0-10-5.14l-20 6.5V96a8 8 0 0 0-16 0v21l-20-6.49a8 8 0 0 0-4.95 15.22l20 6.49l-12.34 17a8 8 0 1 0 12.94 9.4l12.34-17l12.34 17a8 8 0 1 0 12.94-9.4l-12.34-17l20-6.49a8 8 0 0 0 5.07-10.09" />
+                        </svg>
+                    </div>
+                    <input asp-for="Password" type="password" id="password"
+                        class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        placeholder="Enter your password" required="" />
+                </div>
+            </div>
+            <div class="relative flex flex-col gap-3">
+                <button type="submit"
+                    class="md:h-12 flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-sky-300 focus:outline-none focus:ring-4 focus:ring-primary-300">Login</button>
+                <span>Don't have an account? <a href="/Register" class="text-yellow-300">Register</a> now to get
+                    started!</span>
+
+            </div>
+
+        </form>
+    </section>
+
+</div>
+<!--section start-->
+
+
+
+@* <form method="post" asp-controller="Users" asp-action="Login" class="theme-form"> *@
+
+@* <input asp-for="ReturnUrl" type="hidden" /> *@
+
+@* <input asp-for="Email" type="text" class="form-control" id="email" placeholder="Email" required=""> *@
+
+
+@* <input asp-for="Password" type="password" class="form-control"  placeholder="Enter your password" required=""> *@
+
+
+@* <button type="submit" class="btn btn-solid">Login</button> *@
+
+
+@* <a href="/Users/Register"<a/> *@

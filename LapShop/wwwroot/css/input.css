@@ -1,0 +1,17 @@
+@import 'tailwindcss' important;
+@config "../../tailwind.config.js";
+@theme {
+  --color-primary: #e2deff;
+  --color-base: #eeedf3;
+  --color-neutral-900: #0a051a;
+
+  --radius-base: 1rem;
+  --font-body: Parkinsans;
+}
+/*   --color-primary: #e2deff;
+  --color-base: #eeecff;
+  --radius-base: 1rem;
+  --font-body: Parkinsans;
+}
+/* #c6c2e8   --color-white: #eeecff;
+*/
