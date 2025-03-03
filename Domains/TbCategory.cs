@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace LapShop.Models
+namespace Domains
 {
     public partial class TbCategory
     {

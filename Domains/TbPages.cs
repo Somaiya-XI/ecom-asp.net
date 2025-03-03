@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LapShop.Models
+namespace Domains
 {
     public class TbPages
     {
         public int PageId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
         public string MetaKeyWord { get; set; } = null!;
         public string MetaDescriptiuon { get; set; } = null!;
         public string ImageName { get; set; } = null!;

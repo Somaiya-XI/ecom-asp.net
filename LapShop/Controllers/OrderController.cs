@@ -40,10 +40,20 @@ namespace LapShop.Controllers
         public async Task<IActionResult> OrderSuccess()
         {
             string sesstionCart = string.Empty;
+
             if (HttpContext.Request.Cookies["Cart"] is not null)
                 sesstionCart = HttpContext.Request.Cookies["Cart"]!;
             var cart = JsonConvert.DeserializeObject<ShoppingCart>(sesstionCart);
-            await SaveOrder(cart);
+
+            var (invoiceItems, salesInvoice) = await SaveOrder(cart);
+
+            if (invoiceItems is not null && salesInvoice is not null)
+            {
+                ViewBag.InvoiceItems = invoiceItems;
+                ViewBag.SalesInvoice = salesInvoice;
+                ViewBag.Cart = cart;
+            }
+
             return View();
         }
 
@@ -105,7 +115,7 @@ namespace LapShop.Controllers
 
             if (cart.lstItems.Count == 0)
             {
-                HttpContext.Response.Cookies.Delete("Cart"); 
+                HttpContext.Response.Cookies.Delete("Cart");
             }
             else
             {
@@ -116,7 +126,7 @@ namespace LapShop.Controllers
             return RedirectToAction("Cart");
         }
 
-        async Task SaveOrder(ShoppingCart oShopingCart)
+        async Task<(List<TbSalesInvoiceItem>, TbSalesInvoice)> SaveOrder(ShoppingCart oShopingCart)
         {
             try
             {
@@ -143,10 +153,12 @@ namespace LapShop.Controllers
                 };
 
                 _salesInvoiceService.Save(oSalesInvoice, lstInvoiceItems, true);
+                return (lstInvoiceItems, oSalesInvoice);
+
             }
             catch (Exception ex)
             {
-
+                return (null, null);
             }
         }
     }

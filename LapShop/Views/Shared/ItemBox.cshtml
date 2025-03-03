@@ -58,22 +58,17 @@
 
 <div class="w-full max-w-sm flex flex-col bg-white border border-gray-200 rounded-lg  img-card">
     <div class="relative overflow-hidden">
-        <div class="w-full h-50 bg-contain bg-center bg-no-repeat bg-gray-200 rounded-t-lg"
+        <div class="w-full h-50 bg-contain bg-center bg-no-repeat bg-[#eaefed] rounded-t-lg"
             style="background: url(/Uploads/Items/@Model.ImageName)"></div>
         <div
-            class="card-cta cursor-pointer absolute w-full bg-black/20 hidden md:flex justify-center items-center gap-5 text-white h-7 bottom-0 translate-y-7 hover:translate-y-0 transition duration-300 delay-300 ease-linear">
+            class="card-cta cursor-pointer absolute w-full bg-primary-500 hover:bg-primary-600 rounded-t-md hidden md:flex justify-center items-center gap-5 text-white h-7 bottom-0 translate-y-7 hover:translate-y-0 transition duration-300  ease-linear">
             <a asp-controller="Order" asp-action="AddToCart" asp-route-itemId="@Model.ItemId"
-                class="flex justify-between items-center gap-1.5 text-sm">
+                class="flex justify-between items-center gap-1.5 text-sm ">
                 <iconify-icon icon="hugeicons:shopping-cart-add-01" width="18" height="18"></iconify-icon>
                 Add to cart
             </a>
         </div>
-        <div class="md:hidden flex justify-start items-center absolute bottom-0 px-2 py-1 ">
-            <a href="#"
-                class="flex justify-center items-center w-fit h-fit border border-black rounded-full p-1 text-center">
-                <iconify-icon icon="hugeicons:shopping-cart-add-01" width="16" height="16"></iconify-icon>
-            </a>
-        </div>
+
     </div>
     <div class="flex flex-col gap-0.5 px-3 py-2">
         <a href="" class="truncate">@Model.ItemName</a>
@@ -86,6 +81,13 @@
             <span class="bg-gray-300 text-slate-800 text-xs font-medium px-1.5 rounded-sm ml-1">4.2</span>
         </div>
         <span class="font-semibold">$@Model.SalesPrice</span>
+        <div
+            class="md:hidden flex w-full items-center justify-center rounded-lg bg-primary-500 hover:bg-primary-600 px-5 py-2.5 text-sm font-medium text-white mt-2">
+            <a href="#" class="flex justify-center items-center text-center gap-1.5">
+                <iconify-icon icon="hugeicons:shopping-cart-add-01" class="text-xl"></iconify-icon>
+                Add to cart
+            </a>
+        </div>
     </div>
 </div>
 

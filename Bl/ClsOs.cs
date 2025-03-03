@@ -1,4 +1,4 @@
-﻿using LapShop.Models;
+﻿using Domains;
 namespace LapShop.Bl
 {
     public interface IOs
@@ -20,8 +20,8 @@ namespace LapShop.Bl
         {
             try
             {
-                var lstCategories = context.TbOs.Where(a => a.CurrentState == 1).ToList();
-                return lstCategories;
+                var lstItems = context.TbOs.Where(a => a.CurrentState == 1).ToList();
+                return lstItems;
             }
             catch
             {

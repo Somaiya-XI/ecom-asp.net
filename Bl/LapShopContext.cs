@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Domains;
 
-namespace LapShop.Models
+namespace LapShop.Bl
 {
     public partial class LapShopContext : IdentityDbContext<ApplicationUser>
     {

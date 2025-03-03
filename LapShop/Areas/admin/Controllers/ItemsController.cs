@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LapShop.Bl;
 using LapShop.Models;
+using Domains;
 using LapShop.Utlities;
 using Microsoft.AspNetCore.Authorization;
 
@@ -41,7 +42,7 @@ namespace LapShop.Areas.admin.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Edit(int? itemId)
         {
-            var item = new Models.TbItem();
+            var item = new TbItem();
             ViewBag.lstCategories = oClsCategories.GetAll();
             ViewBag.lstItemTypes = oClsItemTypes.GetAll();
             ViewBag.lstOs = oClsOs.GetAll();

@@ -2,84 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-<!-- breadcrumb start -->
-<div class="breadcrumb-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="page-title">
-                    <h2>create account</h2>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">create account</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- breadcrumb End -->
-<!--section start-->
-<section class="register-page section-b-space">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>create account</h3>
-                <div class="theme-card">
-                    <form class="theme-form" method="post" asp-controller="Users" asp-action="Register">
-                        <div class="form-row">
-                            <div asp-validation-summary="All">
-
-                            </div>
-                            <div class="col-md-6">
-                                <input asp-for="ReturnUrl" type="hidden" />
-
-                                <label for="email">First Name</label>
-                                <input asp-for="FirstName" type="text" class="form-control" id="fname"
-                                    placeholder="First Name" required="">
-                                <span asp-validation-for="FirstName"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="review">Last Name</label>
-                                <input asp-for="LastName" type="text" class="form-control" id="lname"
-                                    placeholder="Last Name" required="">
-                                <span asp-validation-for="LastName"></span>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <label for="email">email</label>
-                                <input asp-for="Email" type="text" class="form-control" id="email" placeholder="Email"
-                                    required="">
-                                <span asp-validation-for="Email"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="review">Password</label>
-                                <input asp-for="Password" type="password" class="form-control" id="review"
-                                    placeholder="Enter your password" required="">
-                                <span asp-validation-for="Password"></span>
-                            </div>
-                            <button type="submit" class="btn btn-solid">create Account</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Section ends-->
-
 <div class="w-full bg-white flex flex-col rounded-2xl p-4 gap-6 min-h-screen ">
 
     <partial name="_Breadcrumb" />
@@ -91,6 +13,7 @@
         </div>
         <form method="post" asp-controller="Users" asp-action="Register"
             class="flex flex-col  w-full justify-center items-center gap-6 ">
+
             <div class="flex  w-full max-w-xl justify-center items-center gap-3 ">
                 <div class="w-full">
                     <label for="Fname" class="block mb-2 text-md font-medium text-gray-900 ">
@@ -115,7 +38,6 @@
                         <input asp-for="FirstName" type="text" id="Fname"
                             class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
                             placeholder="Jane" required="" />
-                        <span asp-validation-for="FirstName"></span>
 
                     </div>
                 </div>
@@ -142,13 +64,8 @@
                         <input asp-for="LastName" type="text" id="Lname"
                             class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
                             placeholder="Tech" required="" />
-                        <span asp-validation-for="LastName"></span>
-
                     </div>
                 </div>
-
-
-
             </div>
             <div class="w-full max-w-xl">
                 <label for="email" class="block mb-2 text-md font-medium text-gray-900 ">
@@ -171,6 +88,7 @@
                     <input asp-for="Email" type="text" id="email"
                         class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
                         placeholder="Your@mail.com" required="" />
+
                 </div>
             </div>
             <div class="w-full max-w-xl">
@@ -188,14 +106,17 @@
                     <input asp-for="Password" type="password" id="password"
                         class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                         placeholder="Enter your password" required="" />
-                    <span asp-validation-for="Password"></span>
 
                 </div>
             </div>
+            <div asp-validation-summary="All" class="w-full max-w-xl text-xs font-light text-red-800 leading-5">
+
+            </div>
             <div class="w-full max-w-xl flex flex-col gap-3">
                 <button type="submit"
-                    class="md:h-12 flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-sky-300 focus:outline-none focus:ring-4 focus:ring-primary-300">Login</button>
-                <span>Already Registered? <a href="/Register" class="text-yellow-300">LogIn</a> now to continue
+                    class="md:h-12 flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-300">Register</button>
+                <span>Already Registered? <a href="/Register" class="text-primary-800 hover:underline">Login</a> now to
+                    continue
                     shopping!</span>
 
             </div>

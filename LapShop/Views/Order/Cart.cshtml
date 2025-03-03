@@ -6,15 +6,16 @@
 
     @if (@Model is null)
     {
-        <div class="w-full flex flex-col justify-center items-center min-h-screen">
+        <div class="w-full flex flex-col mt-25 tems-center min-h-screen">
             <div class="text-center">
                 <img src="~/empty2.svg" alt="Empty Cart" class="mx-auto mb-4 h-90">
-                <p class="text-lg font-semibold text-gray-800">
+                <p class="text-lg font-semibold text-primary-900">
                     Looks like your cart is still empty!
                 </p>
-                <p class="text-gray-700 mb-4">
+                <p class="text-gray-500 mb-4">
                     Grab the latest gadgets and must-have tech before they’re gone! </p>
-                <button class="bg-primary text-black px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+                <button
+                    class="rounded-lg bg-primary-600 text-white px-5 py-2.5 text-sm font-medium hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300">
                     Start Shopping
                 </button>
             </div>
@@ -26,14 +27,14 @@
 
         <section class="bg-white min-h-screen">
             <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-                <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl">Shopping Cart</h2>
+                <h2 class="text-xl font-semibold text-neutral-900 sm:text-2xl">Shopping Cart</h2>
 
                 <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
                     <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
                         <div class="space-y-6">
                             @foreach (var item in Model.lstItems)
                             {
-                                <div class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6">
+                                <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm md:p-6">
                                     <div class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
                                         <a href="#" class="shrink-0 md:order-1">
                                             <img class="h-20 w-20" src="~/Uploads/Items/@item.ImageName" alt="item image" />
@@ -45,19 +46,19 @@
                                                 <button type="button" id="decrement-button"
                                                     data-input-counter-decrement="counter-input"
                                                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100">
-                                                    <svg class="h-2.5 w-2.5 text-gray-900 " aria-hidden="true"
+                                                    <svg class="h-2.5 w-2.5 text-neutral-900 " aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
                                                         <path stroke="currentColor" stroke-linecap="round"
                                                             stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
                                                     </svg>
                                                 </button>
                                                 <input type="text" id="counter-input" data-input-counter
-                                                    class="qty w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                                                    class="qty w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-neutral-900 focus:outline-none focus:ring-0"
                                                     placeholder="" value=@item.Qty required />
                                                 <button type="button" id="increment-button"
                                                     data-input-counter-increment="counter-input"
                                                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 ">
-                                                    <svg class="h-2.5 w-2.5 text-gray-900" aria-hidden="true"
+                                                    <svg class="h-2.5 w-2.5 text-neutral-900" aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                                         <path stroke="currentColor" stroke-linecap="round"
                                                             stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
@@ -68,14 +69,14 @@
                                                 @{
                                                     var initialPrice = @item.Total / @item.Qty;
                                                 }
-                                                <p class="text-base font-bold text-gray-900 totalPrice"
+                                                <p class="text-base font-bold text-neutral-900 totalPrice"
                                                     data-initial-price="@initialPrice">$@item.Total</p>
                                             </div>
                                         </div>
 
                                         <div class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md">
                                             <a href="#"
-                                                class="text-base font-medium text-gray-900 hover:underline ">@item.ItemName</a>
+                                                class="text-base font-medium text-neutral-900 hover:underline ">@item.ItemName</a>
                                         </div>
                                         <a asp-controller="Order" asp-action="RemoveFromCart" asp-route-itemId="@item.ItemId"
                                             class="inline-flex items-center text-sm font-medium text-red-600 hover:underline order-5">
@@ -95,19 +96,19 @@
 
                     <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
                         <div class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6">
-                            <p class="text-xl font-semibold text-gray-900">Order summary</p>
+                            <p class="text-xl font-semibold text-neutral-900">Order summary</p>
 
                             <div class="space-y-4">
                                 <div class="space-y-2">
                                     <dl class="flex items-center justify-between gap-4">
                                         <dt class="text-base font-normal text-gray-500 ">Original price</dt>
-                                        <dd class="text-base font-medium text-gray-900 " id="overallTotal"
+                                        <dd class="text-base font-medium text-neutral-900 " id="overallTotal"
                                             data-current-total="@Model.Total">$@Model.Total</dd>
                                     </dl>
 
                                     <dl class="flex items-center justify-between gap-4">
                                         <dt class="text-base font-normal text-gray-500">Shipping</dt>
-                                        <dd class="text-base font-medium text-gray-900">$20</dd>
+                                        <dd class="text-base font-medium text-neutral-900">$20</dd>
                                     </dl>
 
                                 </div>
@@ -115,13 +116,13 @@
                                     var Total = Model.Total + 20;
                                 }
                                 <dl class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2 ">
-                                    <dt class="text-base font-bold text-gray-900 ">Total</dt>
-                                    <dd class="text-base font-bold text-gray-900" id="totalWShipping">$@Total</dd>
+                                    <dt class="text-base font-bold text-neutral-900 ">Total</dt>
+                                    <dd class="text-base font-bold text-neutral-900" id="totalWShipping">$@Total</dd>
                                 </dl>
                             </div>
 
                             <a href="/Order/OrderSuccess"
-                                class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-sky-300 focus:outline-none focus:ring-4 focus:ring-primary-300">Proceed
+                                class="flex w-full items-center justify-center rounded-lg bg-primary text-neutral-900 px-5 py-2.5 text-sm font-medium hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300">Proceed
                                 to Checkout</a>
 
                             <div class="flex items-center justify-center gap-2">

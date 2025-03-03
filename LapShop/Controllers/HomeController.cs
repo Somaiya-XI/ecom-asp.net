@@ -25,8 +25,13 @@ namespace LapShop.Controllers
             vm.lstRecommendedItems = AllData.Skip(60).Take(10).ToList();
             vm.lstNewItems = AllData.Skip(90).Take(10).ToList();
             vm.lstSliders = oClsSliders.GetAll();
-            vm.lstCategories = oClsCategories.GetAll().Take(4).ToList();
+            vm.lstCategories = oClsCategories.GetAll().Take(5).ToList();
+
             return View(vm);
+        }
+        public IActionResult home()
+        {
+            return View();
         }
     }
 }

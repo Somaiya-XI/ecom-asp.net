@@ -1,4 +1,4 @@
-﻿using LapShop.Models;
+﻿using Domains;
 
 namespace LapShop.Bl
 {
@@ -33,8 +33,8 @@ namespace LapShop.Bl
             try
             {
 
-                var lstCategories = context.TbItems.ToList();
-                return lstCategories;
+                var lstItems = context.TbItems.ToList();
+                return lstItems;
             }
             catch
             {
@@ -57,9 +57,9 @@ namespace LapShop.Bl
                 //          {
                 //              ItemId=d.ItemId
                 //          }
-                var lstCategories = context.VwItems.Where(a => (a.CategoryId == categoryId || categoryId == null || categoryId == 0)
+                var lstItems = context.VwItems.Where(a => (a.CategoryId == categoryId || categoryId == null || categoryId == 0)
                 && a.CurrentState == 1 && !string.IsNullOrEmpty(a.ImageName)).OrderByDescending(a => a.CreatedDate).ToList();
-                return lstCategories;
+                return lstItems;
             }
             catch
             {
@@ -72,10 +72,10 @@ namespace LapShop.Bl
             try
             {
                 var item = GetById(itemId);
-                var lstCategories = context.VwItems.Where(a => a.SalesPrice > item.SalesPrice - 150
+                var lstItems = context.VwItems.Where(a => a.SalesPrice > item.SalesPrice - 150
                 && a.SalesPrice < item.SalesPrice + 150
                 && a.CurrentState == 1).OrderByDescending(a => a.CreatedDate).ToList();
-                return lstCategories;
+                return lstItems;
             }
             catch
             {

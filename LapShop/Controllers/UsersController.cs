@@ -14,6 +14,8 @@ namespace LapShop.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
+        [HttpGet]
         [Route("/Login")]
         public IActionResult Login(string returnUrl)
         {
@@ -24,11 +26,12 @@ namespace LapShop.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> LoginOut()
+        public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return Redirect("~/");
         }
+        [HttpGet]
         [Route("/Register")]
         public IActionResult Register()
         {
@@ -36,6 +39,7 @@ namespace LapShop.Controllers
         }
 
         [HttpPost]
+        [Route("/Register")]
         public async Task<IActionResult> Register(UserModel model)
         {
             if (!ModelState.IsValid)
@@ -51,6 +55,14 @@ namespace LapShop.Controllers
             try
             {
                 var result = await _userManager.CreateAsync(user, model.Password);
+                if (!result.Succeeded)
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(error.Code, error.Description);
+                    }
+                    return View(model); // Return the same view with validation errors
+                }
 
                 if (result.Succeeded)
                 {
@@ -73,6 +85,7 @@ namespace LapShop.Controllers
         }
 
         [HttpPost]
+        [Route("/Login")]
         public async Task<IActionResult> Login(UserModel model)
         {
             ApplicationUser user = new ApplicationUser()

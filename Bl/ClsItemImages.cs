@@ -1,4 +1,4 @@
-﻿using LapShop.Models;
+﻿using Domains;
 
 namespace LapShop.Bl
 {

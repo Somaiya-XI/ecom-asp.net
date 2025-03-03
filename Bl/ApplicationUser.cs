@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
-namespace LapShop.Models
+namespace LapShop.Bl
 {
     public class ApplicationUser : IdentityUser
     {

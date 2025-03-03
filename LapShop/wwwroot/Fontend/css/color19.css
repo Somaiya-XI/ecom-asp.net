@@ -1,6 +1,32 @@
 :root {
   --theme-deafult: #7a28d8;
 }
+.clip-path-cta-container {
+  width: 29%; /* Makes it scale relative to the container */
+  height: auto;
+  position: absolute;
+  right: 1%; /* Use percentage for better scaling */
+  bottom: 0%;
+}
+
+.clip-path-container {
+  width: 95%; /* Makes it flexible */
+  max-width: 95rem; /* Ensures it doesn't grow too large */
+  height: auto;
+}
+.cta-text {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  color: white;
+
+}
+
+/* .clip-path-container {
+  width: 95rem; 
+  height: auto;
+  position: relative;
+} */
 
 /*-----------------------------------------------------------------------------------
 
@@ -3702,11 +3728,11 @@ header.marketplace .top-header .header-dropdown li a i {
   padding-left: 0;
 }
 .bg-title .theme-tab .bg-title-part .tab-title a {
-  color: #3a4148;
+  color: #c3bfd2;
   font-weight: 500;
 }
 .bg-title .theme-tab .bg-title-part .tab-title .current a {
-  color: #212529;
+  color: white;
   font-weight: 600;
 }
 

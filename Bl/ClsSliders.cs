@@ -1,11 +1,12 @@
-﻿using LapShop.Models;
+﻿using Domains;
+
 namespace LapShop.Bl
 {
     public interface ISliders
     {
         public List<TbSlider> GetAll();
         public TbSlider GetById(int id);
-        public bool Save(TbSlider os);
+        public bool Save(TbSlider slider);
         public bool Delete(int id);
     }
 
@@ -20,8 +21,8 @@ namespace LapShop.Bl
         {
             try
             {
-                var lstCategories = context.TbSliders.Where(a => a.CurrentState == 1).ToList();
-                return lstCategories;
+                var lstSliders = context.TbSliders.ToList();
+                return lstSliders;
             }
             catch
             {
@@ -33,8 +34,8 @@ namespace LapShop.Bl
         {
             try
             {
-                var os = context.TbSliders.FirstOrDefault(a => a.SliderId == id && a.CurrentState == 1);
-                return os;
+                var slider = context.TbSliders.FirstOrDefault(a => a.SliderId == id && a.CurrentState == 1);
+                return slider;
             }
             catch
             {
@@ -42,21 +43,21 @@ namespace LapShop.Bl
             }
         }
 
-        public bool Save(TbSlider os)
+        public bool Save(TbSlider slider)
         {
             try
             {
-                if (os.SliderId == 0)
+                if (slider.SliderId == 0)
                 {
-                    os.CreatedBy = "1";
-                    os.CreatedDate = DateTime.Now;
-                    context.TbSliders.Add(os);
+                    slider.CreatedBy = "1";
+                    slider.CreatedDate = DateTime.Now;
+                    context.TbSliders.Add(slider);
                 }
                 else
                 {
-                    os.UpdatedBy = "1";
-                    os.UpdatedDate = DateTime.Now;
-                    context.Entry(os).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    slider.UpdatedBy = "1";
+                    slider.UpdatedDate = DateTime.Now;
+                    context.Entry(slider).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 }
                 context.SaveChanges();
                 return true;
@@ -71,8 +72,8 @@ namespace LapShop.Bl
         {
             try
             {
-                var os = GetById(id);
-                os.CurrentState = 0;
+                var slider = GetById(id);
+                slider.CurrentState = 0;
                 context.SaveChanges();
                 return true;
             }

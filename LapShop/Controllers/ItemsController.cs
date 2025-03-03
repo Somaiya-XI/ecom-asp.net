@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LapShop.Bl;
 using LapShop.Models;
+using Domains;
 namespace LapShop.Controllers
 {
     public class ItemsController : Controller

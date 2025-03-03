@@ -1,4 +1,5 @@
-﻿using LapShop.Models;
+﻿using Domains;
+
 namespace LapShop.Bl
 {
     public interface ISettings

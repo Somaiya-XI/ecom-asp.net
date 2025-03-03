@@ -1,5 +1,4 @@
 ﻿using Domains;
-using LapShop.Models;
 namespace LapShop.Bl
 {
     public interface IPages

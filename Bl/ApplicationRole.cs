@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bl
+namespace LapShop.Bl
 {
     public class ApplicationRole : IdentityRole
     {

@@ -1,4 +1,4 @@
-﻿namespace LapShop.Models
+﻿namespace Domains
 {
     public class VwItemCategories
     {

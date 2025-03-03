@@ -1,10 +1,68 @@
 @import 'tailwindcss' important;
 @config "../../tailwind.config.js";
 @theme {
-  --color-primary: #e2deff;
-  --color-base: #eeedf3;
-  --color-neutral-900: #0a051a;
+  --color-primary: #0e9a78;
 
+  /* --color-primary-50: #fdfdff;
+  --color-primary-100: #f8f7ff;
+  --color-primary-200: #f2f1ff;
+  --color-primary-300: #edeaff;
+  --color-primary-400: #e7e4ff;
+  --color-primary-500: #e2deff;
+  --color-primary-600: #b5aedf;
+  --color-primary-700: #7c71af;
+  --color-primary-800: #46347e;
+  --color-primary-900: #1d0048;*/
+
+  --color-neutral-900: #0c0c0c;
+  --color-base-100: #e3e1e9;
+  --color-white: #f8f7fe;
+  /* playground color palette */
+
+  /* color */
+  --color-primary-50: #dafff1;
+  --color-primary-100: #88f6d1;
+  --color-primary-200: #70deba;
+  --color-primary-300: #57c7a4;
+  --color-primary-400: #3cb08e;
+  --color-primary-500: #0e9a78;
+  --color-primary-600: #007f62;
+  --color-primary-700: #005c46;
+  --color-primary-800: #003a2b;
+  --color-primary-900: #001e15;
+
+  /* --color-primary-50: #f1f5ff;
+  --color-primary-100: #dde7ff;
+  --color-primary-200: #c9d9ff;
+  --color-primary-300: #b5cbff;
+  --color-primary-400: #a4bdf9;
+  --color-primary-500: #96b0ee;
+  --color-primary-600: #6e8cd8;
+  --color-primary-700: #3e5db5;
+  --color-primary-800: #132990;
+  --color-primary-900: #040058; */
+  /* BLUE 
+  --color-primary-50: #edf7ff;
+  --color-primary-100: #d3ebff;
+  --color-primary-200: #b8dfff;
+  --color-primary-300: #9dd3ff;
+  --color-primary-400: #8cc5f5;
+  --color-primary-500: #7cb8e9;
+  --color-primary-600: #4796d2;
+  --color-primary-700: #0069a5;
+  --color-primary-800: #003d63;
+  --color-primary-900: #001a2e; */
+  /*RED
+/* --color-primary-50: #fff1f1;
+--color-primary-100: #ffdede;
+--color-primary-200: #ffcaca;
+--color-primary-300: #ffb6b6;
+--color-primary-400: #f3a7a8;
+--color-primary-500: #e7999a;
+--color-primary-600: #cd6f72;
+--color-primary-700: #a63842;
+--color-primary-800: #71001b;
+--color-primary-900: #360008; */
   --radius-base: 1rem;
   --font-body: Parkinsans;
 }
@@ -15,3 +73,17 @@
 }
 /* #c6c2e8   --color-white: #eeecff;
 */
+
+/* playground color palette */
+
+.home-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  clip-path: path(
+    'm1462.8,0H57.2C25.6,0,0,25.6,0,57.2v679.7c0,31.6,25.6,57.2,57.2,57.2h931.3c29.5,0,53.5-24,53.5-53.5h0c0-29.5,24-53.5,53.5-53.5h36.7c29.2,0,52.8-23.7,52.8-52.8h0c0-18.3,14.8-33.2,33.2-33.2h246.8c30.4,0,55-24.6,55-55V57.2c0-31.6-25.6-57.2-57.2-57.2Z'
+  );
+}
+
+.clip-path-container svg {
+}

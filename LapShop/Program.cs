@@ -1,5 +1,6 @@
-using LapShop.Bl;
-using LapShop.Models;
+global using LapShop.Bl;
+global using LapShop.Models;
+global using Domains;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<LapShopContext>(options => options.UseSqlServer(bu
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.Password.RequiredLength = 8;
-    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = true;
     options.User.RequireUniqueEmail = true;
 }).AddEntityFrameworkStores<LapShopContext>();
@@ -50,7 +51,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.Name = "Cookie";
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
-    options.LoginPath = "/Users/Login";
+    options.LoginPath = "/Login";
     options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
     options.SlidingExpiration = true;
 });

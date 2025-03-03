@@ -1,5 +1,5 @@
 ﻿using LapShop.Bl;
-using LapShop.Models;
+using Domains;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,23 +11,34 @@ namespace LapShop.ApiControllers
     public class SettingController : ControllerBase
     {
         ISettings oClsSettings;
-        public SettingController(ISettings oISettings)
+        ISliders _Slider;
+        public SettingController(ISettings oISettings, ISliders Slider)
         {
-            oClsSettings=oISettings;
+            oClsSettings = oISettings;
+            _Slider = Slider;
         }
         // GET: api/<SettingController>
         [HttpGet]
         public TbSettings Get()
         {
-            var oSeeting= oClsSettings.GetAll();
+            var oSeeting = oClsSettings.GetAll();
             return oSeeting;
         }
 
         // GET api/<SettingController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("slider")]
+        public IActionResult GetSliders()
         {
-            return "value";
+            var lstSliders = new List<string>();
+
+            var sliders = _Slider.GetAll();
+            foreach (var s in sliders)
+            {
+                Console.WriteLine(s);
+                lstSliders.Add(s.ImageName);
+            }
+
+            return Ok(lstSliders);
         }
 
         // POST api/<SettingController>

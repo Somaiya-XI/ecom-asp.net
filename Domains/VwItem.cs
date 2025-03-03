@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LapShop.Models
+namespace Domains
 {
     public partial class VwItem
     {

@@ -1,62 +1,201 @@
 ﻿@model VmHomePage
 
-<!-- header end -->
-<!-- Home slider -->
+@section Styles {
+    <link rel="stylesheet" href="@("https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/css/glide.core.min.css")" />
+    <link rel="stylesheet" href="@("https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/css/glide.theme.min.css")" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<section class="flex flex-col items-center justify-center ">
+}
+<section class=" ">
+    <div class="bg-white rounded-t-2xl p-4">
+        <div class="swiper hero-slider rounded-t-3xl ">
+            <div class="swiper-wrapper">
+                <div class="clip-path-container swiper-slide">
+                    <svg viewBox="0 0 1520 794" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="clip-shape">
+                                <path
+                                    d="m1496,0H24C10.7,0,0,10.7,0,24v746.1c0,13.3,10.7,24,24,24h964.5c29.5,0,53.5-24,53.5-53.5h0c0-29.5,24-53.5,53.5-53.5h36.7c29.2,0,52.8-23.7,52.8-52.8h0c0-18.3,14.8-33.2,33.2-33.2h277.8c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24Z" />
+                            </clipPath>
+                        </defs>
+                        <image x="0" y="0" width="1520" height="794" clip-path="url(#clip-shape)"
+                            preserveAspectRatio="xMidYMid slice" />
+                    </svg>
+                    <div class="clip-path-cta-container">
+                        <svg viewBox="0 0 478 193" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+                            <defs>
+                                <clipPath id="colored-clip-shape">
+                                    <path
+                                        d="m143,33.2h0c0,29.2-23.7,52.8-52.8,52.8h-36.7C24,86,0,110,0,139.5h0c0,29.5,24,53.5,53.5,53.5h400.5c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24H176.2c-18.3,0-33.2,14.8-33.2,33.2Z" />
+                                </clipPath>
+                            </defs>
+                            <rect width="478" height="193" fill="#eeedf3" clip-path="url(#colored-clip-shape)" />
+                        </svg>
+                        <div class="cta-text flex justify-between items-center w-fit 
+    2xl:w-70 xl:w-60 lg:w-51 md:w-49 sm:w-41
+    sm:pt-9 md:pt-12 lg:pt-4 xl:pt-4 
+    md:pl-3 md:pr-4 lg:px-4 2xl:px-6
+    pt-4 pr-2 bg-red-0">
 
-    <div class="w-full bg-white flex flex-col lg:flex-row rounded-t-2xl p-4 gap-6">
+                            <p class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                                <a href="">Know More!</a>
+                            </p>
 
-        <div
-            class="w-full h-[18.813rem] lg:w-6/10 lg:h-[39.5rem] relative rounded-3xl bg-[url(/headphones.jpg)] bg-center bg-cover">
-            <div
-                class="hidden sm:flex absolute bg-white w-30 h-33 lg:w-40 lg:h-[12rem] bottom-0 right-0 rounded-tl-2xl
-before:content-[''] before:absolute before:bg-transparent before:w-5 before:h-5 before:rounded-br-3xl before:bottom-0 before:-left-5 before:shadow-[0.4rem_0.4rem_0_0.4rem_white]
-after:content-[''] after:absolute after:bg-transparent after:w-5 after:h-5 after:rounded-br-3xl after:-top-5 after:right-0 after:shadow-[0.4rem_0.4rem_0_0.4rem_white]">
+                            <iconify-icon icon="hugeicons:arrow-right-02"
+                                class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                            </iconify-icon>
+                        </div>
+
+                        <div
+                            class="left-0 cta-text items-start hidden lg:flex  lg:pl-2 xl:pl-4 2xl:pl-3 md:top-11 lg:top-16 xl:top-20.5 2xl:top-22.5 lg:gap-1 2xl:gap-6">
+                            <img src="~/brands.svg" class="lg:w-22 xl:w-30 2xl:w-40" alt="">
+
+                            <div class=" flex flex-col 2xl:gap-1">
+                                <p class="text-sm lg:text-[1.07rem] 2xl:text-xl">Awesome brands</p>
+                                <span class="text-xs xl:text-sm">
+                                    Discover the Future of Tech!
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clip-path-container swiper-slide">
+                    <svg viewBox="0 0 1520 794" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="clip-shape">
+                                <path
+                                    d="m1496,0H24C10.7,0,0,10.7,0,24v746.1c0,13.3,10.7,24,24,24h964.5c29.5,0,53.5-24,53.5-53.5h0c0-29.5,24-53.5,53.5-53.5h36.7c29.2,0,52.8-23.7,52.8-52.8h0c0-18.3,14.8-33.2,33.2-33.2h277.8c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24Z" />
+                            </clipPath>
+                        </defs>
+                        <image x="0" y="0" width="1520" height="794" clip-path="url(#clip-shape)"
+                            preserveAspectRatio="xMidYMid slice" />
+                    </svg>
+                    <div class="clip-path-cta-container">
+                        <svg viewBox="0 0 478 193" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+                            <defs>
+                                <clipPath id="colored-clip-shape">
+                                    <path
+                                        d="m143,33.2h0c0,29.2-23.7,52.8-52.8,52.8h-36.7C24,86,0,110,0,139.5h0c0,29.5,24,53.5,53.5,53.5h400.5c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24H176.2c-18.3,0-33.2,14.8-33.2,33.2Z" />
+                                </clipPath>
+                            </defs>
+                            <rect width="478" height="193" fill="#X" clip-path="url(#colored-clip-shape)" />
+                        </svg>
+                        <div class="cta-text flex justify-between items-center w-fit 
+    2xl:w-70 xl:w-60 lg:w-51 md:w-49 sm:w-41
+    sm:pt-9 md:pt-12 lg:pt-4 xl:pt-4 
+    md:pl-3 md:pr-4 lg:px-4 2xl:px-6
+    pt-4 pr-2 bg-red-0">
+
+                            <p class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                                <a href="">Know More!</a>
+                            </p>
+
+                            <iconify-icon icon="hugeicons:arrow-right-02"
+                                class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                            </iconify-icon>
+                        </div>
+
+                        <div
+                            class="left-0 cta-text items-start hidden lg:flex  lg:pl-2 xl:pl-4 2xl:pl-3 md:top-10 lg:top-15 xl:top-19.5 2xl:top-21.5 lg:gap-1 2xl:gap-6">
+                            <img src="~/brands.svg" class="lg:w-22 xl:w-30 2xl:w-40" alt="">
+
+                            <div class=" flex flex-col 2xl:gap-1">
+                                <p class="text-sm lg:text-[1.07rem] 2xl:text-xl">Awesome brands</p>
+                                <span class="text-xs xl:text-sm ">
+                                    Discover the Future of Tech!
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="clip-path-container swiper-slide">
+                    <svg viewBox="0 0 1520 794" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="clip-shape">
+                                <path
+                                    d="m1496,0H24C10.7,0,0,10.7,0,24v746.1c0,13.3,10.7,24,24,24h964.5c29.5,0,53.5-24,53.5-53.5h0c0-29.5,24-53.5,53.5-53.5h36.7c29.2,0,52.8-23.7,52.8-52.8h0c0-18.3,14.8-33.2,33.2-33.2h277.8c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24Z" />
+                            </clipPath>
+                        </defs>
+                        <image x="0" y="0" width="1520" height="794" clip-path="url(#clip-shape)"
+                            preserveAspectRatio="xMidYMid slice" />
+                    </svg>
+                    <div class="clip-path-cta-container">
+                        <svg viewBox="0 0 478 193" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+                            <defs>
+                                <clipPath id="colored-clip-shape">
+                                    <path
+                                        d="m143,33.2h0c0,29.2-23.7,52.8-52.8,52.8h-36.7C24,86,0,110,0,139.5h0c0,29.5,24,53.5,53.5,53.5h400.5c13.3,0,24-10.7,24-24V24c0-13.3-10.7-24-24-24H176.2c-18.3,0-33.2,14.8-33.2,33.2Z" />
+                                </clipPath>
+                            </defs>
+                            <rect width="478" height="193" fill="#eeedf3" clip-path="url(#colored-clip-shape)" />
+                        </svg>
+                        <div class="cta-text flex justify-between items-center w-fit 
+    2xl:w-70 xl:w-60 lg:w-51 md:w-49 sm:w-41
+    sm:pt-9 md:pt-12 lg:pt-4 xl:pt-4 
+    md:pl-3 md:pr-4 lg:px-4 2xl:px-6
+    pt-4 pr-2 bg-red-0">
+
+                            <p class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                                <a href="">Know More!</a>
+                            </p>
+
+                            <iconify-icon icon="hugeicons:arrow-right-02"
+                                class="text-[9px] sm:text-lg md:text-lg lg:text-xl xl:text-3xl 2xl:text-3xl">
+                            </iconify-icon>
+                        </div>
+
+                        <div
+                            class="left-0 cta-text items-start hidden lg:flex  lg:pl-2 xl:pl-4 2xl:pl-3 md:top-10 lg:top-15 xl:top-19.5 2xl:top-21.5 lg:gap-1 2xl:gap-6">
+                            <img src="~/brands.svg" class="lg:w-22 xl:w-30 2xl:w-40" alt="">
+
+                            <div class=" flex flex-col 2xl:gap-1">
+                                <p class="text-sm lg:text-[1.07rem] 2xl:text-xl">Awesome brands</p>
+                                <span class="text-xs xl:text-sm ">
+                                    Discover the Future of Tech!
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
-            <div
-                class="hidden sm:flex absolute bg-zinc-200 w-28 h-30 lg:w-38 lg:h-[11.5rem] bottom-0 right-0 rounded-2xl">
-                New</div>
-
-
         </div>
-
-        <div class="flex flex-col gap-6 w-full lg:w-4/10">
-
-            <div class="w-full h-[18.813rem] rounded-3xl bg-[url(/laptop.jpg)] bg-center bg-cover"></div>
-
-            <div class="w-full h-[18.813rem] rounded-3xl bg-[url(/headphones.jpg)] bg-center bg-cover"></div>
-
-        </div>
-
     </div>
-
 </section>
 
 <section class="w-full bg-white m-auto flex flex-col items-center justify-center pt-16">
-    <h3 class="font-semibold tracking-[.2em] text-2xl">TOP CATEGORIES</h3>
-    <div class="w-full h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-8 px-4">
-        @foreach (var category in Model.lstCategories)
-        {
-            <div class="h-80 md:h-60 lg:h-40">
-                <div class="flex flex-col relative rounded-xl size-full">
-                    <div class="flex justify-end items-end p-6 bg-center bg-cover rounded-2xl text-white size-full"
-                        style="background-image: url('/@category.ImageName')">
-                        <h4 class="font-light text-xl ">@category.CategoryName</h4>
-                    </div>
-                </div>
-            </div>
-        }
-    </div>
+    <h3 class="font-semibold tracking-[.1em] text-primary-800 text-3xl">TOP CATEGORIES</h3>
 
-    <div class="flex flex-col justify-center items-center text-center gap-1.5 pt-16">
-        <h3 class="relative font-semibold tracking-[.2em] text-2xl ">Hot Deal</h3>
-        <p
-            class="relative  text-lg after:content-[''] after:absolute after:h-1 after:w-18 after:bg-red-300 after:-bottom-2 after:right-9  ">
-            Today's Special</p>
+    <div class=" w-full px-4 pt-8">
+        <div class="w-full swiper categories-slider ">
+            <div class="swiper-wrapper">
+                @foreach (var category in Model.lstCategories)
+                {
+                    <div class="swiper-slide h-80 md:h-60 lg:h-50 w-[400px]">
+                        <div class="flex flex-col justify-end relative rounded-xl p-6 bg-center bg-cover rounded-2xl text-white w-full h-full"
+                            style="background-image: url('/uploads/categories/@category.ImageName')">
+                            <h4 class="font-light text-xl ">@category.CategoryName</h4>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
-    <div class="flex justify-center pt-6">
-        <p class="text-center text-green-400">Your perfect deal is just a click away! Grab it before it's gone.</p>
+    <div class="flex flex-col justify-center items-center text-center gap-1.5 pt-16">
+        <h3
+            class="relative text-primary-800 font-semibold tracking-[.1em] text-3xl after:content-[''] after:absolute after:h-0.5 after:w-32 after:bg-primary-900 after:-bottom-1 after:right-4">
+            Hot Deal</h3>
+
+    </div>
+    <div class="flex justify-center pt-4">
+        <p class="text-center text-primary-700 font-medium">Your perfect deal is just a click away! Grab it before it's
+            gone.</p>
     </div>
 
 </section>
@@ -82,8 +221,8 @@ after:content-[''] after:absolute after:bg-transparent after:w-5 after:h-5 after
     <div class="flex justify-center">
         <div class="col-12">
             <div class="theme-tab">
-                <div class="bg-title-part flex bg-primary">
-                    <h5 class="text-black font-bold">RECOMMENDATIONS FOR YOU</h5>
+                <div class="bg-title-part flex bg-primary-800">
+                    <h5 class="text-primary-100 font-bold">RECOMMENDATIONS FOR YOU</h5>
                     <ul class="tabs tab-title flex">
                         <li class="current">
                             <a href="tab-1">New</a>
@@ -121,17 +260,121 @@ after:content-[''] after:absolute after:bg-transparent after:w-5 after:h-5 after
     </div>
 </section>
 
-<!-- product section end -->
-<script>
-    document.querySelectorAll(".img-card").forEach(card => {
-        card.addEventListener('mouseenter', function () {
-            let child = card.querySelector('.card-cta'); // Get only the child inside this card
-            child.classList.remove("translate-y-7")
-        });
-        card.addEventListener('mouseleave', function () {
-            let child = card.querySelector('.card-cta'); // Get only the child inside this card
-            child.classList.add("translate-y-7")
-        });
-    });
+@section Scripts
+{
+    <script src="@("https://cdn.jsdelivr.net/npm/@glidejs/glide@latest/dist/glide.min.js")"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-</script>
+    <!-- product section end -->
+    <script>
+        var swiper2 = new Swiper(".categories-slider", {
+            effect: "coverflow",
+            grabCursor: false,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 150,
+                modifier: 2.5,
+                slideShadows: false,
+            },
+
+
+        });
+        const swiper = new Swiper('.hero-slider', {
+            autoplay: {
+                delay: 3000,
+            },
+            spaceBetween: 20,
+            slidesPerView: "auto",
+            loop: true,
+        });
+        async function fetchSliders() {
+            try {
+                const response = await fetch("/api/setting/slider");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch sliders");
+                }
+
+                const sliders = await response.json();
+                return sliders;
+            } catch (error) {
+                console.error("Error fetching sliders:", error);
+                return [];
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", async function () {
+            const slidersFetched = await fetchSliders();
+
+            if (slidersFetched.length < 3) {
+                console.warn("Not enough slider data from API!");
+                return;
+            }
+
+            const sliders = document.querySelectorAll(".clip-path-container");
+            if (sliders.length < 3) {
+                console.warn("Not enough sliders found in DOM!");
+                return;
+            }
+
+            // Prepare updates from fetched data
+            const updates = [
+                {
+                    imageHref: `/uploads/sliders/${slidersFetched[1]}`,
+                    rectFill: "#826659",
+
+                    linkHref: "/mega-sales",
+                },
+                {
+                    imageHref: `/uploads/sliders/${slidersFetched[2]}`,
+                    rectFill: "#363352",
+                    linkHref: "/asus-rog",
+                },
+                {
+                    imageHref: `/uploads/sliders/${slidersFetched[3]}`,
+                    rectFill: "#262626",
+                    linkHref: "/amd-gaming",
+                },
+            ];
+
+            // Apply changes to each slider
+            sliders.forEach((slide, index) => {
+                if (index >= updates.length) return; // Avoid errors if more than 3 sliders
+
+                // Update first image href inside clip-path
+                const image = slide.querySelector("image");
+                if (image) image.setAttribute("href", updates[index].imageHref);
+
+                // Update rect fill color inside the second clip-path
+                const rect = slide.querySelector("rect");
+                if (rect) rect.setAttribute("fill", updates[index].rectFill);
+
+                // Update "Know More!" link href
+                const knowMoreLink = slide.querySelector(".cta-text a");
+                if (knowMoreLink) knowMoreLink.setAttribute("href", updates[index].linkHref);
+            });
+        });
+
+
+
+        document.querySelectorAll(".img-card").forEach(card => {
+            card.addEventListener('mouseover', function () {
+                let child = card.querySelector('.card-cta'); // Get only the child inside this card
+                child.classList.remove("translate-y-7")
+
+
+            });
+            card.addEventListener('mouseleave', function () {
+                setTimeout(() => {
+                    let child = card.querySelector('.card-cta'); // Get only the child inside this card
+                    child.classList.add("translate-y-7")
+                }, 600)
+
+            });
+        });
+
+    </script>
+}
