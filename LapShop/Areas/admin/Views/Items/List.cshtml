@@ -2,14 +2,237 @@
 
 
 @section Styles
-    {
+{
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="~/assets/Backend/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <!-- End plugin css for this page -->
 }
 
+<section class="bg-white p-3 sm:p-5 rounded-2xl">
+    <div class="">
+        <!-- Start coding here -->
+        <div class="bg-white relative sm:rounded-lg overflow-hidden">
+            <div
+                class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 py-4">
+                <div class="w-full md:w-1/2">
+                    <form class="flex items-center" method="get">
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="text" id="simple-search"
+                                class="bg-gray-50 border border-gray-300 text-primary-800 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Search" required="">
+                        </div>
+                    </form>
+                </div>
+                <div
+                    class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <button type="button"
+                        class="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                        <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
+                        </svg>
+                        Add product
+                    </button>
+                    <div class="flex items-center space-x-3 w-full md:w-auto">
+                        <button id="actionsDropdownButton" data-dropdown-toggle="actionsDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-primary-800 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 "
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="-ml-1 mr-1.5 text-lg text-primary-600 hover:text-primary-700 w-5 h-5"
+                                color="#000000" color="#000000" fill="none">
+                                <path
+                                    d="M6.53792 2.32172C6.69664 1.89276 7.30336 1.89276 7.46208 2.32172L8.1735 4.2443C8.27331 4.51403 8.48597 4.72669 8.7557 4.8265L10.6783 5.53792C11.1072 5.69664 11.1072 6.30336 10.6783 6.46208L8.7557 7.1735C8.48597 7.27331 8.27331 7.48597 8.1735 7.7557L7.46208 9.67828C7.30336 10.1072 6.69665 10.1072 6.53792 9.67828L5.8265 7.7557C5.72669 7.48597 5.51403 7.27331 5.2443 7.1735L3.32172 6.46208C2.89276 6.30336 2.89276 5.69665 3.32172 5.53792L5.2443 4.8265C5.51403 4.72669 5.72669 4.51403 5.8265 4.2443L6.53792 2.32172Z"
+                                    stroke="currentColor" stroke-width="1.5" />
+                                <path
+                                    d="M14.4039 9.64136L15.8869 11.1244M6 22H7.49759C8.70997 22 9.31617 22 9.86124 21.7742C10.4063 21.5484 10.835 21.1198 11.6923 20.2625L19.8417 12.1131C20.3808 11.574 20.6503 11.3045 20.7944 11.0137C21.0685 10.4605 21.0685 9.81094 20.7944 9.25772C20.6503 8.96695 20.3808 8.69741 19.8417 8.15832C19.3026 7.61924 19.0331 7.3497 18.7423 7.20561C18.1891 6.93146 17.5395 6.93146 16.9863 7.20561C16.6955 7.3497 16.426 7.61924 15.8869 8.15832L7.73749 16.3077C6.8802 17.165 6.45156 17.5937 6.22578 18.1388C6 18.6838 6 19.29 6 20.5024V22Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Actions
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
 
-    <div class="container-fluid page-body-wrapper">
+                        </button>
+                        <div id="actionsDropdown"
+                            class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                            <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="actionsDropdownButton">
+                                <li>
+                                    <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Mass
+                                        Edit</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Delete
+                                    all</a>
+                            </div>
+                        </div>
+                        <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-primary-800 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="-ml-1 mr-1.5 text-lg text-primary-600 hover:text-primary-700 w-5 h-5"
+                                color="#000000" fill="none">
+                                <path
+                                    d="M8.85746 12.5061C6.36901 10.6456 4.59564 8.59915 3.62734 7.44867C3.3276 7.09253 3.22938 6.8319 3.17033 6.3728C2.96811 4.8008 2.86701 4.0148 3.32795 3.5074C3.7889 3 4.60404 3 6.23433 3H17.7657C19.396 3 20.2111 3 20.672 3.5074C21.133 4.0148 21.0319 4.8008 20.8297 6.37281C20.7706 6.83191 20.6724 7.09254 20.3726 7.44867C19.403 8.60062 17.6261 10.6507 15.1326 12.5135C14.907 12.6821 14.7583 12.9567 14.7307 13.2614C14.4837 15.992 14.2559 17.4876 14.1141 18.2442C13.8853 19.4657 12.1532 20.2006 11.226 20.8563C10.6741 21.2466 10.0043 20.782 9.93278 20.1778C9.79643 19.0261 9.53961 16.6864 9.25927 13.2614C9.23409 12.9539 9.08486 12.6761 8.85746 12.5061Z"
+                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Filter
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
+                        <div id="filterDropdown"
+                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                            <h6 class="mb-3 text-sm font-medium text-primary-800 dark:text-white">Choose brand</h6>
+                            <ul class="categoryList space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+
+                                @foreach (var c in ViewBag.lstCategories)
+                                {
+
+                                    <li class="flex items-center">
+                                        <input id="@c.CategoryId" type="checkbox" value="@c.CategoryId"
+                                            class="category-checkbox w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="@c.CategoryId"
+                                            class="ml-2 text-sm font-medium text-primary-800 dark:text-gray-100">@c.CategoryName</label>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 ">
+                    <thead class="text-xs text-primary-700 uppercase bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-4 py-3">@ResAdmin.lblItemName </th>
+                            <th scope="col" class="px-4 py-3">@ResAdmin.lblCategoryName </th>
+                            <th scope="col" class="px-4 py-3">@ResAdmin.lblItemType </th>
+                            <th scope="col" class="px-4 py-3">@ResAdmin.lblPrice </th>
+                            <th scope="col" class="px-4 py-3"> <span class="sr-only">@ResGeneral.lblActions</span></th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="">
+                        @foreach (var item in Model)
+                        {
+                            <tr class="border-b border-gray-300 even:bg-gray-50 odd:bg-white">
+
+                                <th scope="row"
+                                    class="flex items-center px-4 py-3 font-medium text-primary-800 whitespace-nowrap">
+                                    <img src="/Uploads/Items/@item.ImageName" alt=" Image" class="w-auto h-18 mr-3">
+                                    @item.ItemName
+                                </th>
+                                <td class="px-4 py-3">@item.CategoryName</td>
+                                <td class="px-4 py-3">@item.ItemTypeName</td>
+                                <td class="px-4 py-3">$@item.SalesPrice</td>
+                                <td class="px-4 py-3 ">
+                                    <button id="@item.ItemId-dropdown-button" data-dropdown-toggle="@item.ItemId-dropdown"
+                                        class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-2xl focus:outline-none"
+                                        type="button">
+                                        <i class="hgi hgi-stroke hgi-more-horizontal-circle-01 text-2xl"></i> </button>
+                                    <div id="@item.ItemId-dropdown"
+                                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow ">
+                                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
+                                            aria-labelledby="@item.ItemId-dropdown-button">
+                                            <li>
+                                                <a href="#" class="block py-2 px-4 hover:bg-gray-100  ">Show</a>
+                                            </li>
+                                            <li>
+                                                <a asp-controller="Items" asp-action="Edit" asp-route-itemId="@item.ItemId"
+                                                    class="block py-2 px-4 hover:bg-gray-100 ">Edit</a>
+                                            </li>
+                                        </ul>
+                                        <div class="py-1">
+                                            <a href="#"
+                                                class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+            <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
+                aria-label="Table navigation">
+                <span class="text-sm font-normal text-gray-500 ">
+                    Showing
+                    <span class="font-semibold text-primary-800">1-10</span>
+                    of
+                    <span class="font-semibold text-primary-800 ">1000</span>
+                </span>
+                <ul class="inline-flex items-stretch -space-x-px">
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">
+                            <span class="sr-only">Previous</span>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">2</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-current="page"
+                            class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 ">3</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">...</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">100</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">
+                            <span class="sr-only">Next</span>
+                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+@* <div class="container-fluid page-body-wrapper">
         <div class="main-panel">
             <div class="content-wrapper">
                 <div class="page-header">
@@ -92,7 +315,7 @@
     <!-- main-panel ends -->
 </div>
 
-@section Scripts
+
     {
     <!-- plugins:js -->
     <script src="~/Admin/vendors/js/vendor.bundle.base.js"></script>
@@ -113,4 +336,31 @@
     </script>
 }
 
+ *@
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll(".category-checkbox");
 
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener("change", function () {
+                    Search();
+                });
+            });
+        });
+
+        function Search() {
+            let selectedIds = [];
+            document.querySelectorAll(".category-checkbox:checked").forEach((checkbox) => {
+                selectedIds.push(checkbox.value);
+            });
+
+            if (selectedIds.length > 0) {
+                window.location.href = `/admin/Items/Search?id=${selectedIds.join(",")}`;
+            } else {
+                window.location.href = `/admin/Items/Search`;
+            }
+        }
+
+    </script>
+}

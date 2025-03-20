@@ -3728,11 +3728,11 @@ header.marketplace .top-header .header-dropdown li a i {
   padding-left: 0;
 }
 .bg-title .theme-tab .bg-title-part .tab-title a {
-  color: #c3bfd2;
+  color: #d1d5dc;
   font-weight: 500;
 }
 .bg-title .theme-tab .bg-title-part .tab-title .current a {
-  color: white;
+  color: #fcffff;
   font-weight: 600;
 }
 
@@ -8293,49 +8293,6 @@ footer.footer-christmas .social-white i:hover {
   font-size: 20px;
   font-weight: bold;
   margin-right: 5px;
-}
-
-.product-pagination {
-  border-bottom: 1px solid #dddddd;
-  border-top: 1px solid #dddddd;
-  margin: 50px 0;
-}
-.product-pagination .pagination {
-  border-radius: 0;
-}
-.product-pagination .pagination .page-item {
-  border-radius: 0;
-}
-.product-pagination .pagination .page-item a {
-  padding: 18px;
-  border-bottom: 0;
-  border-top: 0;
-  color: #777777;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.product-pagination .pagination .page-item:last-child .page-link {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.product-pagination .pagination .page-item.active a {
-  color: var(--theme-deafult);
-  border-color: #dddddd;
-}
-.product-pagination .product-search-count-bottom {
-  justify-content: flex-end;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
-  padding-right: 15px;
-}
-.product-pagination .product-search-count-bottom h5 {
-  color: #777777;
-  font-size: 14px;
-  margin-bottom: 0;
-  padding: 5px 0;
 }
 
 .bundle {

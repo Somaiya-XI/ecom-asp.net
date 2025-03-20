@@ -5,12 +5,12 @@
     <partial name="_Breadcrumb" />
     <section class="w-full min-h-full pt-12 flex flex-col justify-center items-center gap-6">
         <div class="text-center space-y-1.5">
-            <h3 class="text-2xl font-semibold">Welcome Back!</h3>
-            <p class="text-xs">Enter your details to login</p>
+            <h3 class="text-2xl font-semibold text-primary-800">Welcome Back!</h3>
+            <p class="text-xs text-gray-500">Enter your details to login</p>
         </div>
         <form method="post" asp-controller="Users" asp-action="Login" class="w-full mx-auto space-y-6 max-w-xl">
             <div class="w-full max-w-xl">
-                <label for="email" class="block mb-2 text-md font-medium text-gray-900 ">
+                <label for="email" class="block mb-2 text-md font-medium  text-primary-800 ">
                     Email
                 </label>
                 <div class="relative text-center ">
@@ -28,12 +28,12 @@
                     <input asp-for="ReturnUrl" type="hidden" />
 
                     <input asp-for="Email" type="text" id="email"
-                        class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
+                        class="md:h-12 bg-gray-50 border border-gray-300  text-primary-800 text-sm rounded-lg focus:ring-blue-200 focus:border-blue-300 block w-full ps-10 p-2.5"
                         placeholder="Your@mail.com" required="" />
                 </div>
             </div>
             <div class="w-full max-w-xl">
-                <label for="password" class="block mb-2 text-md font-medium text-gray-900 ">
+                <label for="password" class="block mb-2 text-md font-medium  text-primary-800 ">
                     Password
                 </label>
                 <div class="relative">
@@ -45,14 +45,15 @@
                         </svg>
                     </div>
                     <input asp-for="Password" type="password" id="password"
-                        class="md:h-12 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
+                        class="md:h-12 bg-gray-50 border border-gray-300  text-primary-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                         placeholder="Enter your password" required="" />
                 </div>
             </div>
             <div class="relative flex flex-col gap-3">
                 <button type="submit"
                     class="md:h-12 flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-4 focus:ring-primary-300">Login</button>
-                <span>Don't have an account? <a href="/Register" class="text-primary-800 hover:underline">Register</a> now to get
+                <span class="text-gray-500">Don't have an account? <a href="/Register"
+                        class="text-primary-400 font-semibold hover:underline">Register</a> now to get
                     started!</span>
 
             </div>

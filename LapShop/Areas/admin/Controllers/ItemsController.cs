@@ -28,10 +28,10 @@ namespace LapShop.Areas.admin.Controllers
         {
 
             ViewBag.lstCategories = oClsCategories.GetAll();
-            var items = oClsItems.GetAllItemsData(null);
+            var items = oClsItems.GetAllItemsData().Take(18).ToList();
             return View(items);
         }
-
+        [HttpGet]
         public IActionResult Search(int id)
         {
             ViewBag.lstCategories = oClsCategories.GetAll();

@@ -14,6 +14,7 @@ namespace LapShop.Controllers
             this.oItemImages = oItemImages;
         }
 
+        [Route("/Items/{id}")]
         public IActionResult ItemDetails(int id)
         {
             var item = oItem.GetItemId(id);
@@ -24,7 +25,7 @@ namespace LapShop.Controllers
             vm.lstItemImages = oItemImages.GetByItemId(id);
             return View(vm);
         }
-
+        [Route("/Items")]
         public IActionResult ItemList()
         {
             //oItem.UpdateImages();

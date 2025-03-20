@@ -9,9 +9,8 @@
           dataSource: data.data,
           pageSize: 20,
           showGoInput: false,
-          showGoButton: true,
+          showGoButton: false,
           callback: function (data, pagination) {
-            // template method of yourself
             var htmlData = '';
 
             for (var i = 0; i < data.length; i++) {
@@ -27,30 +26,48 @@
     );
   },
   DrawItem: function (item) {
-    var data = "<div class='col-xl-3 col-6 col-grid-box'>";
-    data += "<div class='product-box'><div class='img-wrapper'>";
-    data +=
-      "<div class='front'> <a href='#'><img src='/Uploads/Items/" +
-      item.imageName +
-      "' class='img-fluid blur-up lazyload bg-img' alt=''></a></div>";
-    data +=
-      "<div class='back'> <a href='#'><img src='/Uploads/Items/" +
-      item.imageName +
-      "' class='img-fluid blur-up lazyload bg-img' alt=''></a></div>";
-    data += "<div class='cart-info cart-wrap'>";
-    data +=
-      "<button data-toggle='modal' data-target='#addtocart' title='Add to cart'><i class='ti-shopping-cart'></i></button>";
-    data += "<a href='javascript: void (0)' title='Add to Wishlist'><i class='ti-heart' aria-hidden='true'></i></a>";
-    data +=
-      "<a href='#' data-toggle='modal' data-target='#quick - view' title='Quick View'><i class='ti-search' aria-hidden='true'></i></a>";
-    data += "<a href='compare.html' title='Compare'><i class='ti-reload' aria-hidden='true'></i></a></div></div>";
-    data +=
-      "<div class='product-detail'><div class='rating'> <i class='fa fa-star'></i> <i class='fa fa-star'></i> <i class='fa fa-star'></i>";
-    data += "<i class='fa fa-star'></i> <i class='fa fa-star'></i></div>";
-    data += "<a href='product-page(no - sidebar).html'><h6>" + item.itemName + '</h6></a> <p> </p>';
-    data += '<h4>$' + item.salesPrice + '</h4>';
-    data +=
-      "<ul class='color-variant'><li class='bg-light0'></li><li class='bg-light1'></li><li class='bg-light2'></li></ul> </div> </div> </div>";
-    return data;
+    return `
+      <div class="w-full max-w-sm flex flex-col bg-white border border-gray-200 rounded-lg  img-card">
+    <div class="relative overflow-hidden">
+        <div class="w-full h-50 bg-contain bg-center bg-no-repeat bg-gray-100 rounded-t-lg"
+            style="background: url(/Uploads/Items/${item.imageName}"></div>
+
+
+    </div>
+    <div class="flex flex-col gap-0.5 px-3 py-2">
+        <a href="" class="truncate text-primary-900">${item.itemName}</a>
+        <div class="flex items-center gap-0.5">
+            <iconify-icon icon="solar:star-bold" class="text-amber-400 text-md"></iconify-icon>
+            <iconify-icon icon="solar:star-bold" class="text-amber-400 text-md"></iconify-icon>
+            <iconify-icon icon="solar:star-bold" class="text-amber-400 text-md"></iconify-icon>
+            <iconify-icon icon="solar:star-bold" class="text-amber-400 text-md"></iconify-icon>
+            <iconify-icon icon="solar:star-bold" class="text-amber-400 text-md"></iconify-icon>
+            <span class="bg-gray-300 text-primary-800 text-xs font-medium px-1.5 rounded-sm ml-1">4.2</span>
+        </div>
+        <span class="font-semibold text-primary-900">$${item.salesPrice}</span>
+        <div
+            class="flex w-full items-center justify-center rounded-lg bg-primary-500 hover:bg-primary-600 px-5 py-2.5 text-sm font-medium text-white mt-2">
+            <a href="/Order/AddToCart?itemId=${item.itemId}" class="flex
+                justify-center items-center text-center gap-1.5">
+                <iconify-icon icon="hugeicons:shopping-cart-add-01" class="text-xl"></iconify-icon>
+                Add to cart
+            </a>
+        </div>
+    </div>
+</div>
+    `;
   },
 };
+
+document.querySelectorAll('.img-card').forEach((card) => {
+  card.addEventListener('mouseover', function () {
+    let child = card.querySelector('.card-cta'); // Get only the child inside this card
+    child.classList.remove('translate-y-7');
+  });
+  card.addEventListener('mouseleave', function () {
+    setTimeout(() => {
+      let child = card.querySelector('.card-cta'); // Get only the child inside this card
+      child.classList.add('translate-y-7');
+    }, 600);
+  });
+});

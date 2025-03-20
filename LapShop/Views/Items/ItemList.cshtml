@@ -1,54 +1,15 @@
-﻿<!-- breadcrumb start -->
-<div class="breadcrumb-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="page-title">
-                    <h2>collection</h2>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <nav aria-label="breadcrumb" class="theme-breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">collection</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+﻿<section class="bg-white w-full m-auto flex flex-col justify-between pt-8 px-4 rounded-2xl">
+    <partial name="_Breadcrumb" />
+    <div id="ItemArea"
+        class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-9">
+        <!-- Items will be added here dynamically -->
     </div>
-</div>
-<!-- breadcrumb end -->
-<!-- section start -->
-<section class="section-b-space ratio_asos">
-    <div class="collection-wrapper">
-        <div class="container">
-            <div class="row">
-
-                <div class="collection-content col">
-                    <div class="page-main-content">
-                        <div class="row">
-                            <div class="col-sm-12">
-
-                                <div class="collection-product-wrapper">
-                                    <div class="product-wrapper-grid">
-                                        <div class="row margin-res" id="ItemArea">
-
-                                        </div>
-                                    </div>
-                                    <div class="product-pagination" id="ItemPagination">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="product-pagination" id="ItemPagination"></div>
 </section>
-<!-- section End -->
+
+
+
+
 
 @section Styles
 {
@@ -60,6 +21,9 @@
     <script src="~/custom/js/pagination.js"></script>
     <script src="~/modules/items.js"></script>
     <script>
+
         ClsItems.GetAll();
+
+
     </script>
 }

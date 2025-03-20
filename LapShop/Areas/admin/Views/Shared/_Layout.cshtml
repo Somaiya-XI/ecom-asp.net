@@ -1,263 +1,265 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en">>
+
 <head>
-    <title>@ViewBag.Title</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="~/Admin/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="~/Admin/vendors/css/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="~/Admin/vendors/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/Admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="~/Admin/css/demo_3/style.css">
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="~/Admin/images/favicon.png" />
+  <title>@ViewBag.Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--css -->
+  <link rel="stylesheet" href="~/Admin/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="~/Admin/vendors/css/vendor.bundle.base.css">
 
-    @RenderSection("Styles",false)
+
+  <link rel="stylesheet" href="~/Admin/vendors/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="~/Admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="~/Admin/css/demo_3/style.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+
+  <!--  icons and ui library -->
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+  <!-- TailwindCss -->
+  <link rel="stylesheet" type="text/css" href="~/css/output.css">
+
+  <!-- Additional Page Styles -->
+  @RenderSection("Styles", false)
 </head>
-<body>
-    <div class="container-scroller">
-      <!-- partial:partials/_horizontal-navbar.html -->
-      <div class="horizontal-menu">
-        <nav class="navbar top-navbar col-lg-12 col-12 p-0">
-          <div class="container">
-            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-              <a class="navbar-brand brand-logo" href="index.html"><img src="~/Admin/images/logo.svg" alt="logo" /></a>
-              <a class="navbar-brand brand-logo-mini" href="index.html"><img src="~/Admin/images/logo-mini.svg" alt="logo" /></a>
+
+<body class="font-[Parkinsans] text-primary-800 leading-normal tracking-normal bg-gray-100">
+  <div class="antialiased px-4">
+    <nav class="bg-neutral-900 mx-4 py-2.5 md:ml-64 px-4 rounded-2xl z-50">
+      <div class="flex flex-wrap justify-between items-center">
+        <div class="flex justify-start items-center">
+          <button data-drawer-target="drawer-navigation" data-drawer-toggle="drawer-navigation"
+            aria-controls="drawer-navigation"
+            class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-primary-700 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100">
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <svg aria-hidden="true" class="hidden w-6 h-6" fill="#000" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Toggle sidebar</span>
+          </button>
+          <a href="/Admin" class="flex items-center justify-between mr-4">
+            <img src="~/Logo2.svg" class="mr-3 h-8" alt="Lapshop Logo" />
+
+          </a>
+        </div>
+        <div class="flex items-center lg:order-2 bg-gray-100  rounded-lg pr-3">
+          <button type="button" data-drawer-toggle="drawer-navigation" aria-controls="drawer-navigation"
+            class="p-2 mr-1 text-primary-600 rounded-lg hover:text-primary-700 bg-gray-100 focus:ring-4 focus:ring-gray-300 ">
+            <span class="sr-only">Toggle search</span>
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path clip-rule="evenodd" fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z">
+              </path>
+            </svg>
+          </button>
+
+          <!-- Notifications -->
+          <button type="button" data-dropdown-toggle="notification-dropdown"
+            class="p-2 mr-1 text-primary-600 rounded-lg hover:text-primary-700 hover:bg-gray-100  focus:ring-4 focus:ring-gray-300 ">
+            <span class="sr-only">View notifications</span>
+            <!-- Bell icon -->
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+              </path>
+            </svg>
+          </button>
+
+          <!-- Avatar -->
+
+          <button type="button" class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0  " id="user-menu-button"
+            aria-expanded="false" data-dropdown-toggle="dropdown">
+            <span class="sr-only">Open user menu</span>
+            <img class="w-9 h-9 rounded-full" src="/user.svg" alt="user photo" />
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow rounded-xl"
+            id="dropdown">
+            <div class="py-3 px-4">
+              <span class="block text-sm font-semibold text-primary-800 ">Neil Sims</span>
+              <span class="block text-sm text-primary-800 truncate">name@flowbite.com</span>
             </div>
-            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-              <ul class="navbar-nav mr-lg-2">
-                <li class="nav-item nav-search d-none d-lg-block">
-                  <div class="input-group">
-                    <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-                      <span class="input-group-text" id="search">
-                        <i class="mdi mdi-magnify"></i>
-                      </span>
-                    </div>
-                    <input type="text" class="form-control" id="navbar-search-input" placeholder="Search projects" aria-label="search" aria-describedby="search">
-                  </div>
-                </li>
-              </ul>
-              <ul class="navbar-nav navbar-nav-right">
-                <li class="nav-item nav-profile dropdown">
-                  <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="nav-profile-img">
-                      <img src="~/Admin/images/faces/face1.jpg" alt="image">
-                      <span class="availability-status online"></span>
-                    </div>
-                    <div class="nav-profile-text">
-                      <p class="text-black">David Greymaax</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
-                      <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-                  </div>
-                </li>
-                <li class="nav-item d-none d-lg-flex full-screen-link">
-                  <a class="nav-link">
-                    <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
-                  </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="mdi mdi-email-outline"></i>
-                    <span class="count-symbol bg-warning"></span>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                    <h6 class="p-3 mb-0">Messages</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <img src="~/Admin/images/faces/face4.jpg" alt="image" class="profile-pic">
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
-                        <p class="text-gray mb-0"> 1 Minutes ago </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <img src="~/Admin/images/faces/face2.jpg" alt="image" class="profile-pic">
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
-                        <p class="text-gray mb-0"> 15 Minutes ago </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <img src="~/Admin/images/faces/face3.jpg" alt="image" class="profile-pic">
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
-                        <p class="text-gray mb-0"> 18 Minutes ago </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <h6 class="p-3 mb-0 text-center">4 new messages</h6>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-                    <i class="mdi mdi-bell-outline"></i>
-                    <span class="count-symbol bg-danger"></span>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                    <h6 class="p-3 mb-0">Notifications</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <div class="preview-icon bg-success">
-                          <i class="mdi mdi-calendar"></i>
-                        </div>
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                        <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <div class="preview-icon bg-warning">
-                          <i class="mdi mdi-cog"></i>
-                        </div>
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
-                        <p class="text-gray ellipsis mb-0"> Update dashboard </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                      <div class="preview-thumbnail">
-                        <div class="preview-icon bg-info">
-                          <i class="mdi mdi-link-variant"></i>
-                        </div>
-                      </div>
-                      <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                        <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-                        <p class="text-gray ellipsis mb-0"> New admin wow! </p>
-                      </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <h6 class="p-3 mb-0 text-center">See all notifications</h6>
-                  </div>
-                </li>
-                <li class="nav-item nav-logout d-none d-lg-flex">
-                  <a class="nav-link" href="#">
-                    <i class="mdi mdi-power"></i>
-                  </a>
-                </li>
-                <li class="nav-item nav-settings d-none d-lg-flex">
-                  <a class="nav-link" href="#">
-                    <i class="mdi mdi-format-line-spacing"></i>
-                  </a>
-                </li>
-              </ul>
-              <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
-                <span class="mdi mdi-menu"></span>
-              </button>
-            </div>
-          </div>
-        </nav>
-        <nav class="bottom-navbar">
-          <div class="container">
-            <ul class="nav page-navigation">
-              <li class="nav-item">
-                <a class="nav-link" href="/admin/Home">
-                  <i class="mdi mdi-home menu-icon"></i>
-                  <span class="menu-title">Dashboard</span>
-                </a>
+            <ul class="py-1 text-gray-700 " aria-labelledby="dropdown">
+
+              <li>
+                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 ">Account
+                  settings</a>
               </li>
+            </ul>
 
-
-              <li class="nav-item">
-                <a href="/admin/Categories/List" class="nav-link">
-                  <i class="mdi mdi-clipboard-text menu-icon"></i>
-                  <span class="menu-title">Basic Data</span>
-                  <i class="menu-arrow"></i></a>
-                <div class="submenu">
-                  <ul class="submenu-item">
-                    <li class="nav-item"><a  class="nav-link" href="/admin/Categories/List">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/admin/Items/List">Items</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/forms/validation.html">Validation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/forms/wizard.html">Wizard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/forms/text_editor.html">Text Editor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/forms/code_editor.html">Code Editor</a></li>
-                  </ul>
-                </div>
-              </li>
-
-
-
-              <li class="nav-item">
-                <a href="http://www.bootstrapdash.com/demo/purple/jquery/documentation/documentation.html"" class="nav-link" target="_blank">
-                  <i class="mdi mdi-file-document-box menu-icon"></i>
-                  <span class="menu-title">Documentation</span></a>
+            <ul class="py-1 text-gray-700 " aria-labelledby="dropdown">
+              <li>
+                <a asp-area="Default" asp-controller="Users" asp-action="Logout"
+                  class="block py-2 px-4 text-sm hover:bg-gray-100 ">Logout</a>
               </li>
             </ul>
           </div>
-        </nav>
-      </div>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <div class="main-panel">
-
-          @RenderBody()
-          <!-- content-wrapper ends -->
-
-
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="container">
-              <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021 <a href="https://www.bootstrapdash.com/" target="_blank">BootstrapDash</a>. All rights reserved.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-              </div>
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="~/Admin/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="~/Admin/vendors/chart.js/Chart.min.js"></script>
-    <script src="~/Admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="~/Admin/js/off-canvas.js"></script>
-    <script src="~/Admin/js/hoverable-collapse.js"></script>
-    <script src="~/Admin/js/misc.js"></script>
-    <script src="~/Admin/js/settings.js"></script>
-    <script src="~/Admin/js/todolist.js"></script>
-    <script src="~/Admin/js/jquery.cookie.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="~/Admin/js/dashboard.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
-    <!-- End custom js for this page -->
+    </nav>
 
-    @RenderSection("Scripts",false);
+    <!-- Sidebar -->
+
+    <aside
+      class="fixed top-0 left-0 z-40 w-64 h-full pt-14 transition-transform bg-white border-r border-gray-200 md:translate-x-0"
+      aria-label="Sidenav" id="drawer-navigation">
+      <div class="overflow-y-auto py-5 px-3 h-full bg-white  ">
+
+        <ul class="space-y-2">
+          <li>
+            <a href="#"
+              class="flex items-start p-2 text-base font-medium text-primary-800 rounded-lg  hover:bg-gray-100  group">
+
+              <i
+                class="hgi hgi-stroke hgi-pie-chart text-2xl flex-shrink-0  text-primary-600 transition duration-75 group-hover:text-primary-700 "></i>
+              <span class="ml-3">Overview</span>
+            </a>
+          </li>
+          <li>
+            <button type="button"
+              class="flex items-center p-2 w-full text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100 "
+              aria-controls="dropdown-sales" data-collapse-toggle="dropdown-sales">
+              <i
+                class="hgi hgi-stroke hgi-store-02 text-2xl flex-shrink-0  text-primary-600 transition duration-75 group-hover:text-primary-700  "></i>
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Shop</span>
+              <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path clip-rule="evenodd" fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg> </button>
+            <ul id="dropdown-sales" class="py-2 space-y-2">
+              <li
+                class="flex items-center p-2 pl-11 w-full gap-2 text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100">
+                <i class="hgi hgi-stroke hgi-trolley-01 text-xl flex-shrink-0 text-primary-600 transition
+                duration-75 group-hover:text-primary-700 dark:text-gray-400 dark:group-hover:text-white "></i>
+                <a href="/admin/Items/List" class="">Products</a>
+              </li>
+              <li
+                class="flex items-center p-2 pl-11 w-full gap-2 text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                  class="w-5 h-5 flex-shrink-0  text-primary-600 transition duration-75 group-hover:text-primary-700  "
+                  fill="none">
+                  <path
+                    d="M7 21H16.9999C19.3569 21 20.5354 21 21.2677 20.2678C21.9999 19.5355 21.9999 18.357 21.9999 16C21.9999 13.643 21.9999 12.4645 21.2677 11.7322C20.5354 11 19.3569 11 16.9999 11H7C4.64302 11 3.46453 11 2.7323 11.7322C2.00007 12.4644 2.00005 13.6429 2 15.9999C1.99995 18.357 1.99993 19.5355 2.73217 20.2677C3.4644 21 4.64294 21 7 21Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M4 11C4.00005 9.59977 4.00008 8.89966 4.27263 8.36485C4.5123 7.89455 4.89469 7.51218 5.365 7.27253C5.89981 7 6.59993 7 8.00015 7H16C17.4001 7 18.1002 7 18.635 7.27248C19.1054 7.51217 19.4878 7.89462 19.7275 8.36502C20 8.8998 20 9.59987 20 11"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6 7C6.00004 5.5998 6.00006 4.89969 6.27259 4.3649C6.51227 3.89457 6.89467 3.51218 7.36501 3.27252C7.89981 3 8.59991 3 10.0001 3H14C15.4001 3 16.1002 3 16.635 3.27248C17.1054 3.51217 17.4878 3.89462 17.7275 4.36502C18 4.8998 18 5.59987 18 7"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M16 15L15.7 15.4C15.1111 16.1851 14.8167 16.5777 14.3944 16.7889C13.9721 17 13.4814 17 12.5 17H11.5C10.5186 17 10.0279 17 9.60557 16.7889C9.18328 16.5777 8.88885 16.1851 8.3 15.4L8 15"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <a href="/admin/Categories/List" class="">Categories</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <button type="button"
+              class="flex items-center p-2 w-full text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+              aria-controls="dropdown-authentication" data-collapse-toggle="dropdown-authentication">
+
+              <i
+                class="hgi hgi-stroke hgi-square-lock-02 text-2xl flex-shrink-0  text-primary-600 transition duration-75 group-hover:text-primary-700"></i>
+              <span class="flex-1 ml-3 text-left whitespace-nowrap">Account settings</span>
+              <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+              <li>
+                <a href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Sign
+                  In</a>
+              </li>
+              <li>
+                <a href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Sign
+                  Up</a>
+              </li>
+              <li>
+                <a href="#"
+                  class="flex items-center p-2 pl-11 w-full text-base font-medium text-primary-800 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Forgot
+                  Password</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"
+              class="flex items-center p-2 text-base font-medium text-primary-800 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+
+              <i
+                class="hgi hgi-stroke hgi-inbox-download text-2xl flex-shrink-0 w-6 h-6 text-primary-600 transition duration-75 dark:text-gray-400 group-hover:text-primary-700"></i>
+              <span class="flex-1 ml-3 whitespace-nowrap">Messages</span>
+              <span
+                class="inline-flex justify-center items-center w-5 h-5 text-xs font-semibold rounded-full text-white bg-primary-400">
+                4
+              </span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </aside>
+  </div>
+  <main class="p-4 md:ml-64 h-auto pt-12">
+    <div class="">
+      @RenderBody()
+
+
+    </div>
+  </main>
+
+  <!-- Theme Scripts -->
+  <script src="~/Admin/js/jquery.cookie.js"></script>
+  <script src="~/Admin/js/dashboard.js"></script>
+  <script src="~/Fontend/js/script.js"></script>
+
+  <!-- Custom Scripts-->
+  <script src="~/modules/helper.js"></script>
+  <script src="~/modules/settings.js"></script>
+  <script src="~/js/menu.js"></script>
+
+  <!-- Online Scripts -->
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.3.0/dist/iconify-icon.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+  <!-- Additional Pages Scripts -->
+  @RenderSection("Scripts", false);
 </body>
+
 </html>

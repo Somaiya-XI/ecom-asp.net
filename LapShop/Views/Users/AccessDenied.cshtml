@@ -1,9 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div class="w-full bg-white flex flex-col rounded-2xl p-4 gap-6 ">
 
-<h1>
-    You Are Not Authorized
-</h1>
+    <div class="w-full flex flex-col mt-25 tems-center min-h-screen">
+        <div class="text-center">
+            <img src="~/denied.svg" alt="Empty Cart" class="mx-auto mb-4 h-90">
+            <p class="text-lg font-semibold text-primary-800">
+                Looks like you lost your way!
+            </p>
+            <p class="text-gray-500 mb-4">
+                Log in to continue or return to the previous page.
+            </p>
+            <a href="/"
+                class="rounded-lg bg-primary-600 text-white px-5 py-2.5 text-sm font-medium hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300">
+                Go Back
+            </a>
+        </div>
+
+    </div>
