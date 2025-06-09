@@ -20,18 +20,13 @@ namespace LapShop.Controllers
         public IActionResult Index()
         {
             VmHomePage vm = new VmHomePage();
-            var AllData = oClsItems.GetAllItemsData();
+            var AllData = oClsItems.GetAllItemsData(); // I'm making it queryable for better performance!
             vm.lstAllItems = AllData.Skip(20).Take(18).ToList();
             vm.lstRecommendedItems = AllData.Skip(60).Take(10).ToList();
             vm.lstNewItems = AllData.Skip(90).Take(10).ToList();
-            vm.lstSliders = oClsSliders.GetAll();
             vm.lstCategories = oClsCategories.GetAll().Take(7).ToList();
 
             return View(vm);
-        }
-        public IActionResult home()
-        {
-            return View();
         }
     }
 }

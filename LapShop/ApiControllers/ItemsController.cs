@@ -44,17 +44,7 @@ namespace LapShop.ApiControllers
             oApiResponse.StatusCode = "200";
             return oApiResponse;
         }
-
-        //[HttpGet("{id}")]
-        //public IActionResult Get(int id)
-        //{
-        //    ApiResponse oApiResponse = new ApiResponse();
-        //    oApiResponse.Data = oItem.GetById(id);
-        //    oApiResponse.Errors = null;
-        //    oApiResponse.StatusCode = "200";
-        //    return Ok(new object() { });
-        //}
-
+        
         // GET api/<ItemsController>/5
         [HttpGet("GetByCategoryId/{categoryId}")]
         public ApiResponse GetByCategoryId(int categoryId)

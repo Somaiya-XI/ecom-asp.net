@@ -33,7 +33,10 @@ namespace LapShop.Controllers
 
         public IActionResult MyOrders()
         {
-            return View();
+            string userId = _userManager.GetUserId(User); 
+            Guid userGuid = Guid.Parse(userId);           
+           var lstOrders =  _salesInvoiceService.GetAllCustomerOrder(userGuid);
+            return View(lstOrders);
         }
 
         [Authorize]
@@ -153,6 +156,7 @@ namespace LapShop.Controllers
                 };
 
                 _salesInvoiceService.Save(oSalesInvoice, lstInvoiceItems, true);
+                Response.Cookies.Delete("Cart");
                 return (lstInvoiceItems, oSalesInvoice);
 
             }

@@ -11,6 +11,8 @@ namespace LapShop.Bl
 {
     public interface ISalesInvoice
     {
+        public List<TbSalesInvoice> GetAllCustomerOrder(Guid customerId);
+
         public List<VwSalesInvoice> GetAll();
 
         public TbSalesInvoice GetById(int id);
@@ -38,6 +40,21 @@ namespace LapShop.Bl
             catch (Exception ex)
             {
                 throw new Exception();
+            }
+        }        
+        public List<TbSalesInvoice> GetAllCustomerOrder(Guid customerId)
+        {
+            try
+            {
+                return ctx.TbSalesInvoices
+                    .Where(invoice => invoice.CustomerId == customerId)
+                    .Include(invoice => invoice.TbSalesInvoiceItems)
+                    .ThenInclude(invoiceItem => invoiceItem.Item)            
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Failed to load customer orders", ex);
             }
         }
 

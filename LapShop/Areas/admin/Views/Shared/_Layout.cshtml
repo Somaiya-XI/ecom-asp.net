@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject  UserManager<ApplicationUser> _userManager;
+
+<!DOCTYPE html>
 
 <html lang="en">>
 
@@ -97,8 +99,8 @@
             class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow rounded-xl"
             id="dropdown">
             <div class="py-3 px-4">
-              <span class="block text-sm font-semibold text-primary-800 ">Neil Sims</span>
-              <span class="block text-sm text-primary-800 truncate">name@flowbite.com</span>
+              <span class="block text-sm font-semibold text-primary-800 "> @_userManager.GetUserName(User)</span>
+              <span class="block text-sm text-primary-800 truncate">@await _userManager.GetUserAsync(User)</span>
             </div>
             <ul class="py-1 text-gray-700 " aria-labelledby="dropdown">
 

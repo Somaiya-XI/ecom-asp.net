@@ -14,10 +14,10 @@
                 </p>
                 <p class="text-gray-500 mb-4">
                     Grab the latest gadgets and must-have tech before they’re gone! </p>
-                <button
+                <a asp-controller="Items" asp-action="ItemList"
                     class="rounded-lg bg-primary-600 text-white px-5 py-2.5 text-sm font-medium hover:text-white hover:bg-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-300">
                     Start Shopping
-                </button>
+                </a>
             </div>
 
         </div>
@@ -44,6 +44,7 @@
                                         <div class="flex items-center justify-between md:order-3 md:justify-end">
                                             <div class="flex items-center">
                                                 <button type="button" id="decrement-button"
+                                                        data-item-id="@item.ItemId"
                                                     data-input-counter-decrement="counter-input"
                                                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100">
                                                     <svg class="h-2.5 w-2.5 text-primary-800 " aria-hidden="true"
@@ -56,6 +57,7 @@
                                                     class="qty w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-primary-800 focus:outline-none focus:ring-0"
                                                     placeholder="" value=@item.Qty required />
                                                 <button type="button" id="increment-button"
+                                                        data-item-id="@item.ItemId"
                                                     data-input-counter-increment="counter-input"
                                                     class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100 ">
                                                     <svg class="h-2.5 w-2.5 text-primary-800 " aria-hidden="true"
@@ -127,7 +129,7 @@
 
                             <div class="flex items-center justify-center gap-2">
                                 <span class="text-sm font-normal text-gray-500 "> or </span>
-                                <a href="#" title=""
+                                <a asp-controller="Home" asp-action="Index" 
                                     class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline ">
                                     Continue Shopping
                                     <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -168,7 +170,28 @@
             document.querySelector('#totalWShipping').textContent = `$${total + 20}`;
         }
 
-        const handleUpdateQuantity = () => {/*AJAX CALL FOR API*/ }
+        const handleUpdateQuantity = (itemId, newQuantity) => {
+            fetch(`/api/order/${itemId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(parseInt(newQuantity))
+            })
+                .then(response => {
+                    console.log(response);
+                    if (!response.ok) throw new Error('Failed to update quantity');
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data.message); 
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("Failed to update quantity");
+                });
+        };
+        
         const handleRemoveFromCart = () => {/*AJAX CALL FOR API*/ }
 
         calculateTotal();
@@ -178,14 +201,17 @@
                 let input = this.nextElementSibling; // Get the input field
                 let itemTotalHtml = this.parentNode.nextElementSibling.querySelector('.totalPrice');
                 let initialPrice = parseFloat(itemTotalHtml.getAttribute("data-initial-price")); // Get stored price
+                let itemId = this.getAttribute("data-item-id");
 
                 if (input && input.type === "text") {
                     let newValue = parseInt(input.value) - 1;
                     input.value = newValue > 0 ? newValue : 1; // Prevent negative numbers
+                    handleUpdateQuantity(itemId, newValue);
                 }
                 let newTotal = initialPrice * parseInt(input.value);
                 itemTotalHtml.textContent = `$${newTotal.toFixed(2)}`; // Update total price
                 calculateTotal();
+
             });
         });
 
@@ -194,11 +220,14 @@
             btn.addEventListener("click", function () {
                 let input = this.previousElementSibling; // Get the input field
                 let itemTotalHtml = this.parentNode.nextElementSibling.querySelector('.totalPrice');
+                let itemId = this.getAttribute("data-item-id");
 
                 let initialPrice = parseFloat(itemTotalHtml.getAttribute("data-initial-price")); // Get stored price
 
                 if (input && input.type === "text") {
-                    input.value = parseInt(input.value) + 1;
+                    let newValue = parseInt(input.value) + 1;
+                    input.value = newValue;
+                    handleUpdateQuantity(itemId, newValue);
                 }
 
                 let newTotal = initialPrice * parseInt(input.value);
